@@ -1,0 +1,99 @@
+{
+  "name": "Institution",
+  "fields": [
+    {
+      "fieldName": "instCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "identifier",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "label",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "insChllInfrHedr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insChllInfrText",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insChllInfrLabl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insSbmtAthnLabl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insRsndInfrLabl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "insWhyInfrLabl",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "contactInstitution",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "contact",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "logo",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "logo",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "institutionType",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "instType"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "currency",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "currency"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "country"
+    }
+  ],
+  "entityTableName": "institution",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093953"
+}

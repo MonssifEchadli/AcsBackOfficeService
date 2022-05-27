@@ -1,0 +1,38 @@
+{
+  "name": "Country",
+  "fields": [
+    {
+      "fieldName": "couCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "couIden",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "couName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "couNati",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "country",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093958"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "InstitutionType",
+  "fields": [
+    {
+      "fieldName": "istCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "istLabe",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "institution_type",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093955"
+}

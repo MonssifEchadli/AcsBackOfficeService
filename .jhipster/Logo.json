@@ -1,0 +1,43 @@
+{
+  "name": "Logo",
+  "fields": [
+    {
+      "fieldName": "logCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mime",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "length",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "logo",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093956"
+}

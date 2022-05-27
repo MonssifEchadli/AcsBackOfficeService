@@ -1,0 +1,46 @@
+{
+  "name": "ContactInstitution",
+  "fields": [
+    {
+      "fieldName": "contInstCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "contInstFirstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contInstLastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contInstPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contInstEmail",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contInstJob",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "contact_institution",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093954"
+}

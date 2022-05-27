@@ -1,0 +1,46 @@
+{
+  "name": "Currency",
+  "fields": [
+    {
+      "fieldName": "curCode",
+      "fieldType": "Long",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "curAlphCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "curDefaNumbDeci",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "curLabe",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "curSymb",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "curIden",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "currency",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "microserviceName": "AcsBackOffice",
+  "clientRootFolder": "AcsBackOffice",
+  "databaseType": "sql",
+  "changelogDate": "20220527093957"
+}

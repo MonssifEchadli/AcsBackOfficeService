@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Institution.
+    -->
+    <changeSet id="20220527093953-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="contact_cont_inst_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__contact_id"
+                                 referencedColumnNames="cont_inst_code"
+                                 referencedTableName="contact_institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="logo_log_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__logo_id"
+                                 referencedColumnNames="log_code"
+                                 referencedTableName="logo"/>
+
+        <addForeignKeyConstraint baseColumnNames="inst_type_ist_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__inst_type_id"
+                                 referencedColumnNames="ist_code"
+                                 referencedTableName="institution_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="currency_cur_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__currency_id"
+                                 referencedColumnNames="cur_code"
+                                 referencedTableName="currency"/>
+
+        <addForeignKeyConstraint baseColumnNames="country_cou_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__country_id"
+                                 referencedColumnNames="cou_code"
+                                 referencedTableName="country"/>
+    </changeSet>
+</databaseChangeLog>
