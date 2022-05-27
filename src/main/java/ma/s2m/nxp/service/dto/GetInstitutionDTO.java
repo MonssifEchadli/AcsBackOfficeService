@@ -1,8 +1,9 @@
 package ma.s2m.nxp.service.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class GetInstitutionDTO {
+public class GetInstitutionDTO implements Serializable {
 
     private Long instCode;
 
@@ -18,8 +19,7 @@ public class GetInstitutionDTO {
 
     private ContactSlimGetInstitutionDTO contactSlimGetInstitutionDTO;
 
-    private LogoSlimGetInstitutionDto logoSlimInstitutionDto;
-
+    private LogoDTO logo;
 
     public Long getInstCode() {
         return instCode;
@@ -77,12 +77,12 @@ public class GetInstitutionDTO {
         this.contactSlimGetInstitutionDTO = contactSlimGetInstitutionDTO;
     }
 
-    public LogoSlimGetInstitutionDto getLogoSlimInstitutionDto() {
-        return logoSlimInstitutionDto;
+    public LogoDTO getLogoDTO() {
+        return logo;
     }
 
-    public void setLogoSlimInstitutionDto(LogoSlimGetInstitutionDto logoSlimInstitutionDto) {
-        this.logoSlimInstitutionDto = logoSlimInstitutionDto;
+    public void setLogoDTO(LogoDTO logoDTO) {
+        this.logo = logoDTO;
     }
 
     @Override
@@ -90,12 +90,12 @@ public class GetInstitutionDTO {
         if (this == o) return true;
         if (!(o instanceof GetInstitutionDTO)) return false;
         GetInstitutionDTO that = (GetInstitutionDTO) o;
-        return instCode.equals(that.instCode) && identifier.equals(that.identifier) && Label.equals(that.Label) && institutionTypeSlimGetInstitutionDTO.equals(that.institutionTypeSlimGetInstitutionDTO) && countrySlimInstitutionDTO.equals(that.countrySlimInstitutionDTO) && currencySlimGetInstitutionDTO.equals(that.currencySlimGetInstitutionDTO) && contactSlimGetInstitutionDTO.equals(that.contactSlimGetInstitutionDTO) && logoSlimInstitutionDto.equals(that.logoSlimInstitutionDto);
+        return instCode.equals(that.instCode) && identifier.equals(that.identifier) && Label.equals(that.Label) && institutionTypeSlimGetInstitutionDTO.equals(that.institutionTypeSlimGetInstitutionDTO) && countrySlimInstitutionDTO.equals(that.countrySlimInstitutionDTO) && currencySlimGetInstitutionDTO.equals(that.currencySlimGetInstitutionDTO) && contactSlimGetInstitutionDTO.equals(that.contactSlimGetInstitutionDTO) && logo.equals(that.logo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instCode, identifier, Label, institutionTypeSlimGetInstitutionDTO, countrySlimInstitutionDTO, currencySlimGetInstitutionDTO, contactSlimGetInstitutionDTO, logoSlimInstitutionDto);
+        return Objects.hash(instCode, identifier, Label, institutionTypeSlimGetInstitutionDTO, countrySlimInstitutionDTO, currencySlimGetInstitutionDTO, contactSlimGetInstitutionDTO, logo);
     }
 
     @Override
@@ -108,7 +108,7 @@ public class GetInstitutionDTO {
             ", countrySlimInstitutionDTO=" + countrySlimInstitutionDTO +
             ", currencySlimGetInstitutionDTO=" + currencySlimGetInstitutionDTO +
             ", contactSlimGetInstitutionDTO=" + contactSlimGetInstitutionDTO +
-            ", logoSlimInstitutionDto=" + logoSlimInstitutionDto +
+            ", logoDTO=" + logo +
             '}';
     }
 }

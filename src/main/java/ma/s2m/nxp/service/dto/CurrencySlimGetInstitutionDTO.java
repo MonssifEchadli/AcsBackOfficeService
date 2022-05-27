@@ -1,8 +1,9 @@
 package ma.s2m.nxp.service.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class CurrencySlimGetInstitutionDTO {
+public class CurrencySlimGetInstitutionDTO implements Serializable {
 
     private Long curCode;
 

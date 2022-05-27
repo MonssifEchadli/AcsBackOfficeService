@@ -1,8 +1,9 @@
 package ma.s2m.nxp.service.dto;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class CountrySlimInstitutionDTO {
+public class CountrySlimInstitutionDTO implements Serializable {
 
     private Long couCode;
 

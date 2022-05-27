@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Optional;
 import ma.s2m.nxp.repository.InstitutionRepository;
 import ma.s2m.nxp.service.InstitutionService;
+import ma.s2m.nxp.service.dto.GetInstitutionDTO;
 import ma.s2m.nxp.service.dto.InstitutionDTO;
 import ma.s2m.nxp.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
@@ -147,6 +148,13 @@ public class InstitutionResource {
      * @param id the id of the institutionDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the institutionDTO, or with status {@code 404 (Not Found)}.
      */
+
+    @GetMapping("/allinstitutions")
+    public List<GetInstitutionDTO> getAllOfInstitutions(){
+           log.debug("Rest request to get all Institutions");
+           return institutionService.findAllInstitution();
+    }
+
     @GetMapping("/institutions/{id}")
     public ResponseEntity<InstitutionDTO> getInstitution(@PathVariable Long id) {
         log.debug("REST request to get Institution : {}", id);

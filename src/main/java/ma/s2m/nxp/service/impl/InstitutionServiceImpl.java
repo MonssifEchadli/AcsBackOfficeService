@@ -7,7 +7,9 @@ import java.util.stream.Collectors;
 import ma.s2m.nxp.domain.Institution;
 import ma.s2m.nxp.repository.InstitutionRepository;
 import ma.s2m.nxp.service.InstitutionService;
+import ma.s2m.nxp.service.dto.GetInstitutionDTO;
 import ma.s2m.nxp.service.dto.InstitutionDTO;
+import ma.s2m.nxp.service.mapper.InstitutionGetMapper;
 import ma.s2m.nxp.service.mapper.InstitutionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,9 +29,12 @@ public class InstitutionServiceImpl implements InstitutionService {
 
     private final InstitutionMapper institutionMapper;
 
-    public InstitutionServiceImpl(InstitutionRepository institutionRepository, InstitutionMapper institutionMapper) {
+    private final InstitutionGetMapper institutionGetMapper;
+
+    public InstitutionServiceImpl(InstitutionRepository institutionRepository, InstitutionMapper institutionMapper, InstitutionGetMapper institutionGetMapper) {
         this.institutionRepository = institutionRepository;
         this.institutionMapper = institutionMapper;
+        this.institutionGetMapper = institutionGetMapper;
     }
 
     @Override
@@ -61,6 +66,13 @@ public class InstitutionServiceImpl implements InstitutionService {
     public List<InstitutionDTO> findAll() {
         log.debug("Request to get all Institutions");
         return institutionRepository.findAll().stream().map(institutionMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<GetInstitutionDTO> findAllInstitution(){
+        log.debug("Request to get all Institutions");
+        return institutionRepository.findAll().stream().map(institutionGetMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
     }
 
     @Override

@@ -2,6 +2,8 @@ package ma.s2m.nxp.service;
 
 import java.util.List;
 import java.util.Optional;
+
+import ma.s2m.nxp.service.dto.GetInstitutionDTO;
 import ma.s2m.nxp.service.dto.InstitutionDTO;
 
 /**
@@ -30,6 +32,8 @@ public interface InstitutionService {
      * @return the list of entities.
      */
     List<InstitutionDTO> findAll();
+
+    List<GetInstitutionDTO> findAllInstitution();
 
     /**
      * Get the "id" institution.

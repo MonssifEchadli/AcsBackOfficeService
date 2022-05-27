@@ -9,20 +9,20 @@ public class InstitutionTypeSlimGetInstitutionDTO implements Serializable {
 
     private String istLabe;
 
-    public Long getInstCode() {
+    public Long getIstCode() {
         return istCode;
     }
 
-    public String getIdentifier() {
+    public void setIstCode(Long istCode) {
+        this.istCode = istCode;
+    }
+
+    public String getIstLabe() {
         return istLabe;
     }
 
-    public void setInstCode(Long instCode) {
-        this.istCode = instCode;
-    }
-
-    public void setIdentifier(String identifier) {
-        this.istLabe = identifier;
+    public void setIstLabe(String istLabe) {
+        this.istLabe = istLabe;
     }
 
     @Override
@@ -41,8 +41,8 @@ public class InstitutionTypeSlimGetInstitutionDTO implements Serializable {
     @Override
     public String toString() {
         return "InstitutionTypeSlimGetInstitutionDTO{" +
-            "instCode=" + istCode +
-            ", identifier='" + istLabe + '\'' +
+            "istCode=" + istCode +
+            ", istLabe='" + istLabe + '\'' +
             '}';
     }
 }
