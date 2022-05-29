@@ -3,7 +3,7 @@ package ma.s2m.nxp.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class CountrySlimInstitutionDTO implements Serializable {
+public class CountrySlimDTO implements Serializable {
 
     private Long couCode;
 
@@ -28,8 +28,8 @@ public class CountrySlimInstitutionDTO implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CountrySlimInstitutionDTO)) return false;
-        CountrySlimInstitutionDTO that = (CountrySlimInstitutionDTO) o;
+        if (!(o instanceof CountrySlimDTO)) return false;
+        CountrySlimDTO that = (CountrySlimDTO) o;
         return couCode.equals(that.couCode) && couName.equals(that.couName);
     }
 

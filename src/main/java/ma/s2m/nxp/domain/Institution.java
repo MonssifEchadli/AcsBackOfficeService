@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.*;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cascade;
 
 /**
  * A Institution.
@@ -50,21 +51,21 @@ public class Institution implements Serializable {
     @Column(name = "ins_why_infr_labl")
     private String insWhyInfrLabl;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private ContactInstitution contact;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private Logo logo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private InstitutionType instType;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Currency currency;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Country country;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

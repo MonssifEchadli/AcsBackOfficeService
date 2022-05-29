@@ -3,7 +3,7 @@ package ma.s2m.nxp.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class InstitutionTypeSlimGetInstitutionDTO implements Serializable {
+public class InstitutionTypeSlimDTO implements Serializable {
 
     private Long istCode;
 
@@ -28,8 +28,8 @@ public class InstitutionTypeSlimGetInstitutionDTO implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof InstitutionTypeSlimGetInstitutionDTO)) return false;
-        InstitutionTypeSlimGetInstitutionDTO that = (InstitutionTypeSlimGetInstitutionDTO) o;
+        if (!(o instanceof InstitutionTypeSlimDTO)) return false;
+        InstitutionTypeSlimDTO that = (InstitutionTypeSlimDTO) o;
         return istCode.equals(that.istCode) && istLabe.equals(that.istLabe);
     }
 

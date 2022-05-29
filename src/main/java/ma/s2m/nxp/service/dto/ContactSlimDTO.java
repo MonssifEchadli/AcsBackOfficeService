@@ -3,13 +3,17 @@ package ma.s2m.nxp.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class ContactSlimGetInstitutionDTO implements Serializable {
+public class ContactSlimDTO implements Serializable {
 
     private Long contInstCode;
 
     private String contInstFirstName;
 
     private String contInstLastName;
+
+    private String contInstPhone;
+
+    private String contInstEmail;
 
     public Long getContInstCode() {
         return contInstCode;
@@ -35,17 +39,33 @@ public class ContactSlimGetInstitutionDTO implements Serializable {
         this.contInstLastName = contInstLastName;
     }
 
+    public String getContInstPhone() {
+        return contInstPhone;
+    }
+
+    public void setContInstPhone(String contInstPhone) {
+        this.contInstPhone = contInstPhone;
+    }
+
+    public String getContInstEmail() {
+        return contInstEmail;
+    }
+
+    public void setContInstEmail(String contInstEmail) {
+        this.contInstEmail = contInstEmail;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof ContactSlimGetInstitutionDTO)) return false;
-        ContactSlimGetInstitutionDTO that = (ContactSlimGetInstitutionDTO) o;
-        return contInstCode.equals(that.contInstCode) && contInstFirstName.equals(that.contInstFirstName) && contInstLastName.equals(that.contInstLastName);
+        if (!(o instanceof ContactSlimDTO)) return false;
+        ContactSlimDTO that = (ContactSlimDTO) o;
+        return contInstCode.equals(that.contInstCode) && contInstFirstName.equals(that.contInstFirstName) && contInstLastName.equals(that.contInstLastName) && Objects.equals(contInstPhone, that.contInstPhone) && Objects.equals(contInstEmail, that.contInstEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contInstCode, contInstFirstName, contInstLastName);
+        return Objects.hash(contInstCode, contInstFirstName, contInstLastName, contInstPhone, contInstEmail);
     }
 
     @Override
@@ -54,6 +74,8 @@ public class ContactSlimGetInstitutionDTO implements Serializable {
             "contInstCode=" + contInstCode +
             ", contInstFirstName='" + contInstFirstName + '\'' +
             ", contInstLastName='" + contInstLastName + '\'' +
+            ", contInstPhone='" + contInstPhone + '\'' +
+            ", contInstEmail='" + contInstEmail + '\'' +
             '}';
     }
 }

@@ -3,7 +3,7 @@ package ma.s2m.nxp.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class CurrencySlimGetInstitutionDTO implements Serializable {
+public class CurrencySlimDTO implements Serializable {
 
     private Long curCode;
 
@@ -28,8 +28,8 @@ public class CurrencySlimGetInstitutionDTO implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof CurrencySlimGetInstitutionDTO)) return false;
-        CurrencySlimGetInstitutionDTO that = (CurrencySlimGetInstitutionDTO) o;
+        if (!(o instanceof CurrencySlimDTO)) return false;
+        CurrencySlimDTO that = (CurrencySlimDTO) o;
         return curCode.equals(that.curCode) && curAlphCode.equals(that.curAlphCode);
     }
 

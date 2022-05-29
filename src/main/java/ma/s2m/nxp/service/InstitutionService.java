@@ -3,7 +3,8 @@ package ma.s2m.nxp.service;
 import java.util.List;
 import java.util.Optional;
 
-import ma.s2m.nxp.service.dto.GetInstitutionDTO;
+import liquibase.pro.packaged.S;
+import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
 import ma.s2m.nxp.service.dto.InstitutionDTO;
 
 /**
@@ -13,27 +14,26 @@ public interface InstitutionService {
     /**
      * Save a institution.
      *
-     * @param institutionDTO the entity to save.
+     * @param slimInstitutionDTO the entity to save.
      * @return the persisted entity.
      */
-    InstitutionDTO save(InstitutionDTO institutionDTO);
+    SlimInstitutionDTO save(SlimInstitutionDTO slimInstitutionDTO);
 
     /**
      * Partially updates a institution.
      *
-     * @param institutionDTO the entity to update partially.
+     * @param slimInstitutionDTO the entity to update partially.
      * @return the persisted entity.
      */
-    Optional<InstitutionDTO> partialUpdate(InstitutionDTO institutionDTO);
+    Optional<SlimInstitutionDTO> partialUpdate(SlimInstitutionDTO slimInstitutionDTO);
 
     /**
      * Get all the institutions.
      *
      * @return the list of entities.
      */
-    List<InstitutionDTO> findAll();
+    List<SlimInstitutionDTO> findAll();
 
-    List<GetInstitutionDTO> findAllInstitution();
 
     /**
      * Get the "id" institution.
@@ -41,7 +41,7 @@ public interface InstitutionService {
      * @param id the id of the entity.
      * @return the entity.
      */
-    Optional<InstitutionDTO> findOne(Long id);
+    Optional<SlimInstitutionDTO> findOne(Long id);
 
     /**
      * Delete the "id" institution.

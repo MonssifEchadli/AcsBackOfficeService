@@ -11,12 +11,6 @@ public class LogoDTO implements Serializable {
 
     private Long logCode;
 
-    private String name;
-
-    private String mime;
-
-    private Long length;
-
     @Lob
     private byte[] data;
 
@@ -30,29 +24,6 @@ public class LogoDTO implements Serializable {
         this.logCode = logCode;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMime() {
-        return mime;
-    }
-
-    public void setMime(String mime) {
-        this.mime = mime;
-    }
-
-    public Long getLength() {
-        return length;
-    }
-
-    public void setLength(Long length) {
-        this.length = length;
-    }
 
     public byte[] getData() {
         return data;
@@ -96,9 +67,6 @@ public class LogoDTO implements Serializable {
     public String toString() {
         return "LogoDTO{" +
             "logCode=" + getLogCode() +
-            ", name='" + getName() + "'" +
-            ", mime='" + getMime() + "'" +
-            ", length=" + getLength() +
             ", data='" + getData() + "'" +
             "}";
     }
