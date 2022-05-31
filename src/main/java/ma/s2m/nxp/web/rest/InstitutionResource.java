@@ -8,7 +8,6 @@ import java.util.Optional;
 import ma.s2m.nxp.repository.InstitutionRepository;
 import ma.s2m.nxp.service.InstitutionService;
 import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
-import ma.s2m.nxp.service.dto.InstitutionDTO;
 import ma.s2m.nxp.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -8,7 +8,6 @@ import ma.s2m.nxp.domain.Institution;
 import ma.s2m.nxp.repository.InstitutionRepository;
 import ma.s2m.nxp.service.InstitutionService;
 import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
-import ma.s2m.nxp.service.dto.InstitutionDTO;
 import ma.s2m.nxp.service.mapper.SlimInstitutionMapper;
 import ma.s2m.nxp.service.mapper.InstitutionMapper;
 import org.slf4j.Logger;
@@ -38,6 +37,7 @@ public class InstitutionServiceImpl implements InstitutionService {
     }
 
     @Override
+    @Transactional
     public SlimInstitutionDTO save(SlimInstitutionDTO slimInstitutionDTO) {
         log.debug("Request to save Institution : {}", slimInstitutionDTO);
         Institution institution = slimInstitutionMapper.toEntity(slimInstitutionDTO);

@@ -1,5 +1,6 @@
 package ma.s2m.nxp.service.dto;
 
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -7,6 +8,7 @@ public class SlimInstitutionDTO implements Serializable {
 
     private Long instCode;
 
+    @NotEmpty
     private String identifier;
 
     private String Label;

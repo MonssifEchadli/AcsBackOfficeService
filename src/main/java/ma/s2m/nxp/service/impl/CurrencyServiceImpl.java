@@ -8,7 +8,9 @@ import ma.s2m.nxp.domain.Currency;
 import ma.s2m.nxp.repository.CurrencyRepository;
 import ma.s2m.nxp.service.CurrencyService;
 import ma.s2m.nxp.service.dto.CurrencyDTO;
+import ma.s2m.nxp.service.dto.CurrencySlimDTO;
 import ma.s2m.nxp.service.mapper.CurrencyMapper;
+import ma.s2m.nxp.service.mapper.CurrencySlimMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -27,52 +29,20 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     private final CurrencyMapper currencyMapper;
 
-    public CurrencyServiceImpl(CurrencyRepository currencyRepository, CurrencyMapper currencyMapper) {
+    private final CurrencySlimMapper currencySlimMapper;
+
+    public CurrencyServiceImpl(CurrencyRepository currencyRepository, CurrencyMapper currencyMapper, CurrencySlimMapper currencySlimMapper) {
         this.currencyRepository = currencyRepository;
         this.currencyMapper = currencyMapper;
+        this.currencySlimMapper = currencySlimMapper;
     }
 
-    @Override
-    public CurrencyDTO save(CurrencyDTO currencyDTO) {
-        log.debug("Request to save Currency : {}", currencyDTO);
-        Currency currency = currencyMapper.toEntity(currencyDTO);
-        currency = currencyRepository.save(currency);
-        return currencyMapper.toDto(currency);
-    }
-
-    @Override
-    public Optional<CurrencyDTO> partialUpdate(CurrencyDTO currencyDTO) {
-        log.debug("Request to partially update Currency : {}", currencyDTO);
-
-        return currencyRepository
-            .findById(currencyDTO.getCurCode())
-            .map(
-                existingCurrency -> {
-                    currencyMapper.partialUpdate(existingCurrency, currencyDTO);
-                    return existingCurrency;
-                }
-            )
-            .map(currencyRepository::save)
-            .map(currencyMapper::toDto);
-    }
 
     @Override
     @Transactional(readOnly = true)
-    public List<CurrencyDTO> findAll() {
+    public List<CurrencySlimDTO> findAll() {
         log.debug("Request to get all Currencies");
-        return currencyRepository.findAll().stream().map(currencyMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
+        return currencyRepository.findAll().stream().map(currencySlimMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
     }
 
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<CurrencyDTO> findOne(Long id) {
-        log.debug("Request to get Currency : {}", id);
-        return currencyRepository.findById(id).map(currencyMapper::toDto);
-    }
-
-    @Override
-    public void delete(Long id) {
-        log.debug("Request to delete Currency : {}", id);
-        currencyRepository.deleteById(id);
-    }
 }

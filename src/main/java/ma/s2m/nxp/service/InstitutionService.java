@@ -3,9 +3,7 @@ package ma.s2m.nxp.service;
 import java.util.List;
 import java.util.Optional;
 
-import liquibase.pro.packaged.S;
 import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
-import ma.s2m.nxp.service.dto.InstitutionDTO;
 
 /**
  * Service Interface for managing {@link ma.s2m.nxp.domain.Institution}.

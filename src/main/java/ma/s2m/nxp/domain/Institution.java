@@ -3,9 +3,12 @@ package ma.s2m.nxp.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.Cascade;
+import org.springframework.beans.factory.annotation.Required;
 
 /**
  * A Institution.
@@ -59,13 +62,13 @@ public class Institution implements Serializable {
     @JoinColumn(unique = true)
     private Logo logo;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private InstitutionType instType;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Currency currency;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     private Country country;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

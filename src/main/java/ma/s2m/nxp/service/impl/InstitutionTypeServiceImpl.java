@@ -8,7 +8,9 @@ import ma.s2m.nxp.domain.InstitutionType;
 import ma.s2m.nxp.repository.InstitutionTypeRepository;
 import ma.s2m.nxp.service.InstitutionTypeService;
 import ma.s2m.nxp.service.dto.InstitutionTypeDTO;
+import ma.s2m.nxp.service.dto.InstitutionTypeSlimDTO;
 import ma.s2m.nxp.service.mapper.InstitutionTypeMapper;
+import ma.s2m.nxp.service.mapper.InstitutionTypeSlimMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -27,56 +29,24 @@ public class InstitutionTypeServiceImpl implements InstitutionTypeService {
 
     private final InstitutionTypeMapper institutionTypeMapper;
 
-    public InstitutionTypeServiceImpl(InstitutionTypeRepository institutionTypeRepository, InstitutionTypeMapper institutionTypeMapper) {
+    private final InstitutionTypeSlimMapper institutionTypeSlimMapper;
+
+    public InstitutionTypeServiceImpl(InstitutionTypeRepository institutionTypeRepository, InstitutionTypeMapper institutionTypeMapper, InstitutionTypeSlimMapper institutionTypeSlimMapper) {
         this.institutionTypeRepository = institutionTypeRepository;
         this.institutionTypeMapper = institutionTypeMapper;
+        this.institutionTypeSlimMapper = institutionTypeSlimMapper;
     }
 
-    @Override
-    public InstitutionTypeDTO save(InstitutionTypeDTO institutionTypeDTO) {
-        log.debug("Request to save InstitutionType : {}", institutionTypeDTO);
-        InstitutionType institutionType = institutionTypeMapper.toEntity(institutionTypeDTO);
-        institutionType = institutionTypeRepository.save(institutionType);
-        return institutionTypeMapper.toDto(institutionType);
-    }
-
-    @Override
-    public Optional<InstitutionTypeDTO> partialUpdate(InstitutionTypeDTO institutionTypeDTO) {
-        log.debug("Request to partially update InstitutionType : {}", institutionTypeDTO);
-
-        return institutionTypeRepository
-            .findById(institutionTypeDTO.getIstCode())
-            .map(
-                existingInstitutionType -> {
-                    institutionTypeMapper.partialUpdate(existingInstitutionType, institutionTypeDTO);
-                    return existingInstitutionType;
-                }
-            )
-            .map(institutionTypeRepository::save)
-            .map(institutionTypeMapper::toDto);
-    }
 
     @Override
     @Transactional(readOnly = true)
-    public List<InstitutionTypeDTO> findAll() {
+    public List<InstitutionTypeSlimDTO> findAll() {
         log.debug("Request to get all InstitutionTypes");
         return institutionTypeRepository
             .findAll()
             .stream()
-            .map(institutionTypeMapper::toDto)
+            .map(institutionTypeSlimMapper::toDto)
             .collect(Collectors.toCollection(LinkedList::new));
     }
 
-    @Override
-    @Transactional(readOnly = true)
-    public Optional<InstitutionTypeDTO> findOne(Long id) {
-        log.debug("Request to get InstitutionType : {}", id);
-        return institutionTypeRepository.findById(id).map(institutionTypeMapper::toDto);
-    }
-
-    @Override
-    public void delete(Long id) {
-        log.debug("Request to delete InstitutionType : {}", id);
-        institutionTypeRepository.deleteById(id);
-    }
 }

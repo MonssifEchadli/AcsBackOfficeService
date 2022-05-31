@@ -9,10 +9,9 @@ import org.mapstruct.*;
  */
 @Mapper(
     componentModel = "spring",
-    uses = { ContactInstitutionMapper.class, LogoMapper.class, InstitutionTypeMapper.class, CurrencyMapper.class, CountryMapper.class }
+    uses = {  LogoMapper.class, InstitutionTypeMapper.class, CurrencyMapper.class, CountryMapper.class }
 )
 public interface InstitutionMapper extends EntityMapper<InstitutionDTO, Institution> {
-    @Mapping(target = "contact", source = "contact", qualifiedByName = "contInstCode")
     @Mapping(target = "logo", source = "logo", qualifiedByName = "logCode")
     @Mapping(target = "instType", source = "instType", qualifiedByName = "istCode")
     @Mapping(target = "currency", source = "currency", qualifiedByName = "curCode")
