@@ -27,7 +27,7 @@ public class InstitutionTypeResource {
 
     private final Logger log = LoggerFactory.getLogger(InstitutionTypeResource.class);
 
-    private static final String ENTITY_NAME = "acsBackOfficeInstitutionType";
+    private static final String ENTITY_NAME = "acsBackofficeInstitutionType";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;

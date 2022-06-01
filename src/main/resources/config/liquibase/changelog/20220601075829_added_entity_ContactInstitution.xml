@@ -7,26 +7,26 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
-        Added the entity Logo.
+        Added the entity ContactInstitution.
     -->
-    <changeSet id="20220527093956-1" author="jhipster">
-        <createTable tableName="logo">
-            <column name="log_code" type="bigint" autoIncrement="true">
+    <changeSet id="20220601075829-1" author="jhipster">
+        <createTable tableName="contact_institution">
+            <column name="con_inst_code" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="name" type="varchar(255)">
+            <column name="con_inst_first_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="mime" type="varchar(255)">
+            <column name="con_inst_last_name" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="length" type="bigint">
+            <column name="con_inst_phone" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="data" type="longblob">
+            <column name="con_inst_email" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="data_content_type" type="varchar(255)">
+            <column name="con_inst_job" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -43,17 +43,17 @@
           This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
           Spring Boot configuration key.
     -->
-    <changeSet id="20220527093956-1-data" author="jhipster" context="faker">
+    <changeSet id="20220601075829-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/fake-data/logo.csv"
+                  file="config/liquibase/fake-data/contact_institution.csv"
                   separator=";"
-                  tableName="logo">
-            <column name="log_code" type="numeric"/>
-            <column name="name" type="string"/>
-            <column name="mime" type="string"/>
-            <column name="length" type="numeric"/>
-            <column name="data" type="blob"/>
-            <column name="data_content_type" type="string"/>
+                  tableName="contact_institution">
+            <column name="con_inst_code" type="numeric"/>
+            <column name="con_inst_first_name" type="string"/>
+            <column name="con_inst_last_name" type="string"/>
+            <column name="con_inst_phone" type="string"/>
+            <column name="con_inst_email" type="string"/>
+            <column name="con_inst_job" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

@@ -11,14 +11,14 @@ class ContactInstitutionDTOTest {
     void dtoEqualsVerifier() throws Exception {
         TestUtil.equalsVerifier(ContactInstitutionDTO.class);
         ContactInstitutionDTO contactInstitutionDTO1 = new ContactInstitutionDTO();
-        contactInstitutionDTO1.setContInstCode(1L);
+        contactInstitutionDTO1.setConInstCode(1L);
         ContactInstitutionDTO contactInstitutionDTO2 = new ContactInstitutionDTO();
         assertThat(contactInstitutionDTO1).isNotEqualTo(contactInstitutionDTO2);
-        contactInstitutionDTO2.setContInstCode(contactInstitutionDTO1.getContInstCode());
+        contactInstitutionDTO2.setConInstCode(contactInstitutionDTO1.getConInstCode());
         assertThat(contactInstitutionDTO1).isEqualTo(contactInstitutionDTO2);
-        contactInstitutionDTO2.setContInstCode(2L);
+        contactInstitutionDTO2.setConInstCode(2L);
         assertThat(contactInstitutionDTO1).isNotEqualTo(contactInstitutionDTO2);
-        contactInstitutionDTO1.setContInstCode(null);
+        contactInstitutionDTO1.setConInstCode(null);
         assertThat(contactInstitutionDTO1).isNotEqualTo(contactInstitutionDTO2);
     }
 }

@@ -4,7 +4,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import ma.s2m.nxp.AcsBackOfficeApp;
+import ma.s2m.nxp.AcsBackofficeApp;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -12,6 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = AcsBackOfficeApp.class)
+@SpringBootTest(classes = AcsBackofficeApp.class)
 public @interface IntegrationTest {
 }

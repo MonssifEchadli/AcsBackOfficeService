@@ -26,7 +26,7 @@ public class LogoResource {
 
     private final Logger log = LoggerFactory.getLogger(LogoResource.class);
 
-    private static final String ENTITY_NAME = "acsBackOfficeLogo";
+    private static final String ENTITY_NAME = "acsBackofficeLogo";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;

@@ -17,100 +17,100 @@ public class ContactInstitution implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long contInstCode;
+    private Long conInstCode;
 
-    @Column(name = "cont_inst_first_name")
-    private String contInstFirstName;
+    @Column(name = "con_inst_first_name")
+    private String conInstFirstName;
 
-    @Column(name = "cont_inst_last_name")
-    private String contInstLastName;
+    @Column(name = "con_inst_last_name")
+    private String conInstLastName;
 
-    @Column(name = "cont_inst_phone")
-    private String contInstPhone;
+    @Column(name = "con_inst_phone")
+    private String conInstPhone;
 
-    @Column(name = "cont_inst_email")
-    private String contInstEmail;
+    @Column(name = "con_inst_email")
+    private String conInstEmail;
 
-    @Column(name = "cont_inst_job")
-    private String contInstJob;
+    @Column(name = "con_inst_job")
+    private String conInstJob;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
-    public Long getContInstCode() {
-        return contInstCode;
+    public Long getConInstCode() {
+        return conInstCode;
     }
 
-    public void setContInstCode(Long contInstCode) {
-        this.contInstCode = contInstCode;
+    public void setConInstCode(Long conInstCode) {
+        this.conInstCode = conInstCode;
     }
 
-    public ContactInstitution contInstCode(Long contInstCode) {
-        this.contInstCode = contInstCode;
+    public ContactInstitution conInstCode(Long conInstCode) {
+        this.conInstCode = conInstCode;
         return this;
     }
 
-    public String getContInstFirstName() {
-        return this.contInstFirstName;
+    public String getConInstFirstName() {
+        return this.conInstFirstName;
     }
 
-    public ContactInstitution contInstFirstName(String contInstFirstName) {
-        this.contInstFirstName = contInstFirstName;
+    public ContactInstitution conInstFirstName(String conInstFirstName) {
+        this.conInstFirstName = conInstFirstName;
         return this;
     }
 
-    public void setContInstFirstName(String contInstFirstName) {
-        this.contInstFirstName = contInstFirstName;
+    public void setConInstFirstName(String conInstFirstName) {
+        this.conInstFirstName = conInstFirstName;
     }
 
-    public String getContInstLastName() {
-        return this.contInstLastName;
+    public String getConInstLastName() {
+        return this.conInstLastName;
     }
 
-    public ContactInstitution contInstLastName(String contInstLastName) {
-        this.contInstLastName = contInstLastName;
+    public ContactInstitution conInstLastName(String conInstLastName) {
+        this.conInstLastName = conInstLastName;
         return this;
     }
 
-    public void setContInstLastName(String contInstLastName) {
-        this.contInstLastName = contInstLastName;
+    public void setConInstLastName(String conInstLastName) {
+        this.conInstLastName = conInstLastName;
     }
 
-    public String getContInstPhone() {
-        return this.contInstPhone;
+    public String getConInstPhone() {
+        return this.conInstPhone;
     }
 
-    public ContactInstitution contInstPhone(String contInstPhone) {
-        this.contInstPhone = contInstPhone;
+    public ContactInstitution conInstPhone(String conInstPhone) {
+        this.conInstPhone = conInstPhone;
         return this;
     }
 
-    public void setContInstPhone(String contInstPhone) {
-        this.contInstPhone = contInstPhone;
+    public void setConInstPhone(String conInstPhone) {
+        this.conInstPhone = conInstPhone;
     }
 
-    public String getContInstEmail() {
-        return this.contInstEmail;
+    public String getConInstEmail() {
+        return this.conInstEmail;
     }
 
-    public ContactInstitution contInstEmail(String contInstEmail) {
-        this.contInstEmail = contInstEmail;
+    public ContactInstitution conInstEmail(String conInstEmail) {
+        this.conInstEmail = conInstEmail;
         return this;
     }
 
-    public void setContInstEmail(String contInstEmail) {
-        this.contInstEmail = contInstEmail;
+    public void setConInstEmail(String conInstEmail) {
+        this.conInstEmail = conInstEmail;
     }
 
-    public String getContInstJob() {
-        return this.contInstJob;
+    public String getConInstJob() {
+        return this.conInstJob;
     }
 
-    public ContactInstitution contInstJob(String contInstJob) {
-        this.contInstJob = contInstJob;
+    public ContactInstitution conInstJob(String conInstJob) {
+        this.conInstJob = conInstJob;
         return this;
     }
 
-    public void setContInstJob(String contInstJob) {
-        this.contInstJob = contInstJob;
+    public void setConInstJob(String conInstJob) {
+        this.conInstJob = conInstJob;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -123,7 +123,7 @@ public class ContactInstitution implements Serializable {
         if (!(o instanceof ContactInstitution)) {
             return false;
         }
-        return contInstCode != null && contInstCode.equals(((ContactInstitution) o).contInstCode);
+        return conInstCode != null && conInstCode.equals(((ContactInstitution) o).conInstCode);
     }
 
     @Override
@@ -136,12 +136,12 @@ public class ContactInstitution implements Serializable {
     @Override
     public String toString() {
         return "ContactInstitution{" +
-            "contInstCode=" + getContInstCode() +
-            ", contInstFirstName='" + getContInstFirstName() + "'" +
-            ", contInstLastName='" + getContInstLastName() + "'" +
-            ", contInstPhone='" + getContInstPhone() + "'" +
-            ", contInstEmail='" + getContInstEmail() + "'" +
-            ", contInstJob='" + getContInstJob() + "'" +
+            "conInstCode=" + getConInstCode() +
+            ", conInstFirstName='" + getConInstFirstName() + "'" +
+            ", conInstLastName='" + getConInstLastName() + "'" +
+            ", conInstPhone='" + getConInstPhone() + "'" +
+            ", conInstEmail='" + getConInstEmail() + "'" +
+            ", conInstJob='" + getConInstJob() + "'" +
             "}";
     }
 }

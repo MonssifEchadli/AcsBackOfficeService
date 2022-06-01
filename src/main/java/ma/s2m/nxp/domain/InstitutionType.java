@@ -19,8 +19,8 @@ public class InstitutionType implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long istCode;
 
-    @Column(name = "ist_labe")
-    private String istLabe;
+    @Column(name = "ist_label")
+    private String istLabel;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getIstCode() {
@@ -36,17 +36,17 @@ public class InstitutionType implements Serializable {
         return this;
     }
 
-    public String getIstLabe() {
-        return this.istLabe;
+    public String getIstLabel() {
+        return this.istLabel;
     }
 
-    public InstitutionType istLabe(String istLabe) {
-        this.istLabe = istLabe;
+    public InstitutionType istLabel(String istLabel) {
+        this.istLabel = istLabel;
         return this;
     }
 
-    public void setIstLabe(String istLabe) {
-        this.istLabe = istLabe;
+    public void setIstLabel(String istLabel) {
+        this.istLabel = istLabel;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -73,7 +73,7 @@ public class InstitutionType implements Serializable {
     public String toString() {
         return "InstitutionType{" +
             "istCode=" + getIstCode() +
-            ", istLabe='" + getIstLabe() + "'" +
+            ", istLabel='" + getIstLabel() + "'" +
             "}";
     }
 }

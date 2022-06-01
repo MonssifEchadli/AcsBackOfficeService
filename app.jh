@@ -1,0 +1,84 @@
+entity Institution (INSTITUTION) {
+	@id instCode Long
+	identifier String
+    label String
+    address String
+    creationDate LocalDate
+    insChllInfrHedr String
+    insChllInfrText String
+	insChllInfrLabl String
+	insSbmtAthnLabl String
+	insRsndInfrLabl String
+	insWhyInfrLabl String
+}
+
+// ContactInstitution
+entity ContactInstitution (CONTACT_INSTITUTION) {
+	@id conInstCode Long
+	conInstFirstName String
+    conInstLastName String
+	conInstPhone String
+	conInstEmail String
+	conInstJob String
+}
+
+// InstitutionType
+entity InstitutionType (INSTITUTION_TYPE) {
+	@id istCode Long
+    istLabel String
+}
+
+// Logo
+entity Logo (LOGO) {
+	@id logCode Long
+	name String
+    mime String
+	length Long
+	data ImageBlob
+}
+
+// Currency
+entity Currency (CURRENCY) {
+	@id curCode Long
+    curAlphCode String
+    curDefaNumbDeci Long
+    curLabe String
+    curSymb String
+    curIden String
+}
+
+// Country
+entity Country (COUNTRY) {
+	@id couCode Long
+    couIden String
+    couName String
+    couNati String
+}
+
+
+
+relationship OneToOne {
+Institution{istContact} to ContactInstitution
+}
+
+relationship OneToOne {
+Institution{istLogo} to Logo
+}
+
+relationship ManyToOne {
+Institution{istCountry} to Country
+}
+
+
+relationship ManyToOne {
+Institution{istCurrency} to Currency
+}
+
+relationship ManyToOne {
+Institution{istType} to InstitutionType
+}
+
+
+dto all with mapstruct
+
+service all with serviceImpl

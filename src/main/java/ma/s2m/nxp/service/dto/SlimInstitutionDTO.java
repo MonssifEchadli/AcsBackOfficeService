@@ -1,6 +1,5 @@
 package ma.s2m.nxp.service.dto;
 
-import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -8,20 +7,21 @@ public class SlimInstitutionDTO implements Serializable {
 
     private Long instCode;
 
-    @NotEmpty
     private String identifier;
 
-    private String Label;
+    private String label;
 
-    private InstitutionTypeSlimDTO instType;
+    private String address;
 
-    private CountrySlimDTO country;
+    private InstitutionTypeSlimDTO istType;
 
-    private CurrencySlimDTO currency;
+    private CountrySlimDTO istCountry;
 
-    private ContactSlimDTO contact;
+    private CurrencySlimDTO istCurrency;
 
-    private LogoDTO logo;
+    private ContactSlimDTO istContact;
+
+    private LogoDTO istLogo;
 
     public Long getInstCode() {
         return instCode;
@@ -40,51 +40,59 @@ public class SlimInstitutionDTO implements Serializable {
     }
 
     public String getLabel() {
-        return Label;
+        return label;
     }
 
     public void setLabel(String label) {
-        Label = label;
+        this.label = label;
     }
 
-    public InstitutionTypeSlimDTO getInstType() {
-        return instType;
+    public String getAddress() {
+        return address;
     }
 
-    public void setInstType(InstitutionTypeSlimDTO instType) {
-        this.instType = instType;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public CountrySlimDTO getCountry() {
-        return country;
+    public InstitutionTypeSlimDTO getIstType() {
+        return istType;
     }
 
-    public void setCountry(CountrySlimDTO country) {
-        this.country = country;
+    public void setIstType(InstitutionTypeSlimDTO istType) {
+        this.istType = istType;
     }
 
-    public CurrencySlimDTO getCurrency() {
-        return currency;
+    public CountrySlimDTO getIstCountry() {
+        return istCountry;
     }
 
-    public void setCurrency(CurrencySlimDTO currency) {
-        this.currency = currency;
+    public void setIstCountry(CountrySlimDTO istCountry) {
+        this.istCountry = istCountry;
     }
 
-    public ContactSlimDTO getContact() {
-        return contact;
+    public CurrencySlimDTO getIstCurrency() {
+        return istCurrency;
     }
 
-    public void setContact(ContactSlimDTO contact) {
-        this.contact = contact;
+    public void setIstCurrency(CurrencySlimDTO istCurrency) {
+        this.istCurrency = istCurrency;
     }
 
-    public LogoDTO getLogo() {
-        return logo;
+    public ContactSlimDTO getIstContact() {
+        return istContact;
     }
 
-    public void setLogo(LogoDTO logo) {
-        this.logo = logo;
+    public void setIstContact(ContactSlimDTO istContact) {
+        this.istContact = istContact;
+    }
+
+    public LogoDTO getIstLogo() {
+        return istLogo;
+    }
+
+    public void setIstLogo(LogoDTO istLogo) {
+        this.istLogo = istLogo;
     }
 
     @Override
@@ -92,12 +100,12 @@ public class SlimInstitutionDTO implements Serializable {
         if (this == o) return true;
         if (!(o instanceof SlimInstitutionDTO)) return false;
         SlimInstitutionDTO that = (SlimInstitutionDTO) o;
-        return instCode.equals(that.instCode) && identifier.equals(that.identifier) && Label.equals(that.Label) && instType.equals(that.instType) && country.equals(that.country) && currency.equals(that.currency) && contact.equals(that.contact) && logo.equals(that.logo);
+        return Objects.equals(instCode, that.instCode) && Objects.equals(identifier, that.identifier) && Objects.equals(label, that.label) && Objects.equals(address, that.address) && Objects.equals(istType, that.istType) && Objects.equals(istCountry, that.istCountry) && Objects.equals(istCurrency, that.istCurrency) && Objects.equals(istContact, that.istContact) && Objects.equals(istLogo, that.istLogo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(instCode, identifier, Label, instType, country, currency, contact, logo);
+        return Objects.hash(instCode, identifier, label, address, istType, istCountry, istCurrency, istContact, istLogo);
     }
 
     @Override
@@ -105,12 +113,13 @@ public class SlimInstitutionDTO implements Serializable {
         return "SlimInstitutionDTO{" +
             "instCode=" + instCode +
             ", identifier='" + identifier + '\'' +
-            ", Label='" + Label + '\'' +
-            ", instType=" + instType +
-            ", country=" + country +
-            ", currency=" + currency +
-            ", contact=" + contact +
-            ", logo=" + logo +
+            ", label='" + label + '\'' +
+            ", address='" + address + '\'' +
+            ", istType=" + istType +
+            ", istCountry=" + istCountry +
+            ", istCurrency=" + istCurrency +
+            ", istContact=" + istContact +
+            ", istLogo=" + istLogo +
             '}';
     }
 }

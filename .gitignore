@@ -4,25 +4,6 @@
 /target/classes/static/**
 /src/test/javascript/coverage/
 
-
-######################
-# Gitlab Config
-.jhipster
-.mvn/wrapper
-.editorconfig
-.gitattributes
-.huskyrc
-.lintstagedrc.js
-.prettierignore
-.prettierrc
-.yo-rc-global.json
-.yo-rc.json
-checkstyle.xml
-package-lock.json
-package.json
-sonar-project.properties
-######################
-
 ######################
 # Node
 ######################

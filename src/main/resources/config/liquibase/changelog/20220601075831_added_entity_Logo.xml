@@ -7,14 +7,26 @@
                         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!--
-        Added the entity InstitutionType.
+        Added the entity Logo.
     -->
-    <changeSet id="20220527093955-1" author="jhipster">
-        <createTable tableName="institution_type">
-            <column name="ist_code" type="bigint" autoIncrement="true">
+    <changeSet id="20220601075831-1" author="jhipster">
+        <createTable tableName="logo">
+            <column name="log_code" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="ist_labe" type="varchar(255)">
+            <column name="name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="mime" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="length" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="data" type="longblob">
+                <constraints nullable="true" />
+            </column>
+            <column name="data_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -31,13 +43,17 @@
           This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
           Spring Boot configuration key.
     -->
-    <changeSet id="20220527093955-1-data" author="jhipster" context="faker">
+    <changeSet id="20220601075831-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/fake-data/institution_type.csv"
+                  file="config/liquibase/fake-data/logo.csv"
                   separator=";"
-                  tableName="institution_type">
-            <column name="ist_code" type="numeric"/>
-            <column name="ist_labe" type="string"/>
+                  tableName="logo">
+            <column name="log_code" type="numeric"/>
+            <column name="name" type="string"/>
+            <column name="mime" type="string"/>
+            <column name="length" type="numeric"/>
+            <column name="data" type="blob"/>
+            <column name="data_content_type" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
         </loadData>
     </changeSet>

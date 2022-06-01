@@ -8,64 +8,64 @@ import java.util.Objects;
  */
 public class ContactInstitutionDTO implements Serializable {
 
-    private Long contInstCode;
+    private Long conInstCode;
 
-    private String contInstFirstName;
+    private String conInstFirstName;
 
-    private String contInstLastName;
+    private String conInstLastName;
 
-    private String contInstPhone;
+    private String conInstPhone;
 
-    private String contInstEmail;
+    private String conInstEmail;
 
-    private String contInstJob;
+    private String conInstJob;
 
-    public Long getContInstCode() {
-        return contInstCode;
+    public Long getConInstCode() {
+        return conInstCode;
     }
 
-    public void setContInstCode(Long contInstCode) {
-        this.contInstCode = contInstCode;
+    public void setConInstCode(Long conInstCode) {
+        this.conInstCode = conInstCode;
     }
 
-    public String getContInstFirstName() {
-        return contInstFirstName;
+    public String getConInstFirstName() {
+        return conInstFirstName;
     }
 
-    public void setContInstFirstName(String contInstFirstName) {
-        this.contInstFirstName = contInstFirstName;
+    public void setConInstFirstName(String conInstFirstName) {
+        this.conInstFirstName = conInstFirstName;
     }
 
-    public String getContInstLastName() {
-        return contInstLastName;
+    public String getConInstLastName() {
+        return conInstLastName;
     }
 
-    public void setContInstLastName(String contInstLastName) {
-        this.contInstLastName = contInstLastName;
+    public void setConInstLastName(String conInstLastName) {
+        this.conInstLastName = conInstLastName;
     }
 
-    public String getContInstPhone() {
-        return contInstPhone;
+    public String getConInstPhone() {
+        return conInstPhone;
     }
 
-    public void setContInstPhone(String contInstPhone) {
-        this.contInstPhone = contInstPhone;
+    public void setConInstPhone(String conInstPhone) {
+        this.conInstPhone = conInstPhone;
     }
 
-    public String getContInstEmail() {
-        return contInstEmail;
+    public String getConInstEmail() {
+        return conInstEmail;
     }
 
-    public void setContInstEmail(String contInstEmail) {
-        this.contInstEmail = contInstEmail;
+    public void setConInstEmail(String conInstEmail) {
+        this.conInstEmail = conInstEmail;
     }
 
-    public String getContInstJob() {
-        return contInstJob;
+    public String getConInstJob() {
+        return conInstJob;
     }
 
-    public void setContInstJob(String contInstJob) {
-        this.contInstJob = contInstJob;
+    public void setConInstJob(String conInstJob) {
+        this.conInstJob = conInstJob;
     }
 
     @Override
@@ -78,27 +78,27 @@ public class ContactInstitutionDTO implements Serializable {
         }
 
         ContactInstitutionDTO contactInstitutionDTO = (ContactInstitutionDTO) o;
-        if (this.contInstCode == null) {
+        if (this.conInstCode == null) {
             return false;
         }
-        return Objects.equals(this.contInstCode, contactInstitutionDTO.contInstCode);
+        return Objects.equals(this.conInstCode, contactInstitutionDTO.conInstCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.contInstCode);
+        return Objects.hash(this.conInstCode);
     }
 
     // prettier-ignore
     @Override
     public String toString() {
         return "ContactInstitutionDTO{" +
-            "contInstCode=" + getContInstCode() +
-            ", contInstFirstName='" + getContInstFirstName() + "'" +
-            ", contInstLastName='" + getContInstLastName() + "'" +
-            ", contInstPhone='" + getContInstPhone() + "'" +
-            ", contInstEmail='" + getContInstEmail() + "'" +
-            ", contInstJob='" + getContInstJob() + "'" +
+            "conInstCode=" + getConInstCode() +
+            ", conInstFirstName='" + getConInstFirstName() + "'" +
+            ", conInstLastName='" + getConInstLastName() + "'" +
+            ", conInstPhone='" + getConInstPhone() + "'" +
+            ", conInstEmail='" + getConInstEmail() + "'" +
+            ", conInstJob='" + getConInstJob() + "'" +
             "}";
     }
 }

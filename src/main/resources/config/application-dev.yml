@@ -32,7 +32,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/AcsBackOffice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/AcsBackoffice?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
     password:
     hikari:
@@ -88,7 +88,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: YWVkNDdiMmZiMjA1NWZhZjQxMzE4ODVkZDllYzkzZmY5MGJkNDI0NDI5ZWExYmZkNTg4ODhlOTg0NGYzYmE0MWFjM2U5YzhlZGE0ODE2NGVjOTRhYzI3OGMyZjAwMjhhZjQ2NThhNzc0NzI5NDlmNGE2M2Q3MDcyNDUyM2ZlOTQ=
+        base64-secret: NDM1Y2NiN2QzZjU5YzM4NTFkZjBkOGJiNzllNWVjYmM3YjhiYTFjZTAyMGE0YWI5OTM0MzBlYzg1MzJhNTExOWI5YmM0YTQxYjJmYzkxNDk4ZTc1NzljMTdlNmEyZWZkNzM5YTI3NmJkODYzYWIxM2JjZTZiYTIyZDFlNzk5ZmQ=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

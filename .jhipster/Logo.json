@@ -23,7 +23,7 @@
     {
       "fieldName": "data",
       "fieldType": "byte[]",
-      "fieldTypeBlobContent": "any"
+      "fieldTypeBlobContent": "image"
     }
   ],
   "relationships": [],
@@ -36,8 +36,8 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "AcsBackOffice",
-  "clientRootFolder": "AcsBackOffice",
+  "microserviceName": "AcsBackoffice",
+  "clientRootFolder": "AcsBackoffice",
   "databaseType": "sql",
-  "changelogDate": "20220527093956"
+  "changelogDate": "20220601075831"
 }

@@ -1,6 +1,8 @@
 package ma.s2m.nxp.service;
 
 import java.util.List;
+import java.util.Optional;
+import ma.s2m.nxp.service.dto.InstitutionTypeDTO;
 import ma.s2m.nxp.service.dto.InstitutionTypeSlimDTO;
 
 /**
@@ -13,4 +15,5 @@ public interface InstitutionTypeService {
      * @return the list of entities.
      */
     List<InstitutionTypeSlimDTO> findAll();
+
 }

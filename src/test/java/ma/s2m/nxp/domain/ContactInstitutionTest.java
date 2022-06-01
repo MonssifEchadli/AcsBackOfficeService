@@ -11,13 +11,13 @@ class ContactInstitutionTest {
     void equalsVerifier() throws Exception {
         TestUtil.equalsVerifier(ContactInstitution.class);
         ContactInstitution contactInstitution1 = new ContactInstitution();
-        contactInstitution1.setContInstCode(1L);
+        contactInstitution1.setConInstCode(1L);
         ContactInstitution contactInstitution2 = new ContactInstitution();
-        contactInstitution2.setContInstCode(contactInstitution1.getContInstCode());
+        contactInstitution2.setConInstCode(contactInstitution1.getConInstCode());
         assertThat(contactInstitution1).isEqualTo(contactInstitution2);
-        contactInstitution2.setContInstCode(2L);
+        contactInstitution2.setConInstCode(2L);
         assertThat(contactInstitution1).isNotEqualTo(contactInstitution2);
-        contactInstitution1.setContInstCode(null);
+        contactInstitution1.setConInstCode(null);
         assertThat(contactInstitution1).isNotEqualTo(contactInstitution2);
     }
 }

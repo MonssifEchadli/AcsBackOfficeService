@@ -5,54 +5,54 @@ import java.util.Objects;
 
 public class ContactSlimDTO implements Serializable {
 
-    private Long contInstCode;
+    private Long conInstCode;
 
-    private String contInstFirstName;
+    private String conInstFirstName;
 
-    private String contInstLastName;
+    private String conInstLastName;
 
-    private String contInstPhone;
+    private String conInstPhone;
 
-    private String contInstEmail;
+    private String conInstEmail;
 
-    public Long getContInstCode() {
-        return contInstCode;
+    public Long getConInstCode() {
+        return conInstCode;
     }
 
-    public void setContInstCode(Long contInstCode) {
-        this.contInstCode = contInstCode;
+    public void setConInstCode(Long conInstCode) {
+        this.conInstCode = conInstCode;
     }
 
-    public String getContInstFirstName() {
-        return contInstFirstName;
+    public String getConInstFirstName() {
+        return conInstFirstName;
     }
 
-    public void setContInstFirstName(String contInstFirstName) {
-        this.contInstFirstName = contInstFirstName;
+    public void setConInstFirstName(String conInstFirstName) {
+        this.conInstFirstName = conInstFirstName;
     }
 
-    public String getContInstLastName() {
-        return contInstLastName;
+    public String getConInstLastName() {
+        return conInstLastName;
     }
 
-    public void setContInstLastName(String contInstLastName) {
-        this.contInstLastName = contInstLastName;
+    public void setConInstLastName(String conInstLastName) {
+        this.conInstLastName = conInstLastName;
     }
 
-    public String getContInstPhone() {
-        return contInstPhone;
+    public String getConInstPhone() {
+        return conInstPhone;
     }
 
-    public void setContInstPhone(String contInstPhone) {
-        this.contInstPhone = contInstPhone;
+    public void setConInstPhone(String conInstPhone) {
+        this.conInstPhone = conInstPhone;
     }
 
-    public String getContInstEmail() {
-        return contInstEmail;
+    public String getConInstEmail() {
+        return conInstEmail;
     }
 
-    public void setContInstEmail(String contInstEmail) {
-        this.contInstEmail = contInstEmail;
+    public void setConInstEmail(String conInstEmail) {
+        this.conInstEmail = conInstEmail;
     }
 
     @Override
@@ -60,22 +60,22 @@ public class ContactSlimDTO implements Serializable {
         if (this == o) return true;
         if (!(o instanceof ContactSlimDTO)) return false;
         ContactSlimDTO that = (ContactSlimDTO) o;
-        return contInstCode.equals(that.contInstCode) && contInstFirstName.equals(that.contInstFirstName) && contInstLastName.equals(that.contInstLastName) && Objects.equals(contInstPhone, that.contInstPhone) && Objects.equals(contInstEmail, that.contInstEmail);
+        return conInstCode.equals(that.conInstCode) && conInstFirstName.equals(that.conInstFirstName) && conInstLastName.equals(that.conInstLastName) && conInstPhone.equals(that.conInstPhone) && conInstEmail.equals(that.conInstEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contInstCode, contInstFirstName, contInstLastName, contInstPhone, contInstEmail);
+        return Objects.hash(conInstCode, conInstFirstName, conInstLastName, conInstPhone, conInstEmail);
     }
 
     @Override
     public String toString() {
-        return "ContactSlimGetInstitutionDTO{" +
-            "contInstCode=" + contInstCode +
-            ", contInstFirstName='" + contInstFirstName + '\'' +
-            ", contInstLastName='" + contInstLastName + '\'' +
-            ", contInstPhone='" + contInstPhone + '\'' +
-            ", contInstEmail='" + contInstEmail + '\'' +
+        return "ContactSlimDTO{" +
+            "conInstCode=" + conInstCode +
+            ", conInstFirstName='" + conInstFirstName + '\'' +
+            ", conInstLastName='" + conInstLastName + '\'' +
+            ", conInstPhone='" + conInstPhone + '\'' +
+            ", conInstEmail='" + conInstEmail + '\'' +
             '}';
     }
 }

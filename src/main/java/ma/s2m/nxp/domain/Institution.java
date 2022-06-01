@@ -3,12 +3,8 @@ package ma.s2m.nxp.domain;
 import java.io.Serializable;
 import java.time.LocalDate;
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.annotations.Cascade;
-import org.springframework.beans.factory.annotation.Required;
 
 /**
  * A Institution.
@@ -56,20 +52,20 @@ public class Institution implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
-    private ContactInstitution contact;
+    private ContactInstitution istContact;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
-    private Logo logo;
+    private Logo istLogo;
 
     @ManyToOne
-    private InstitutionType instType;
+    private Country istCountry;
 
     @ManyToOne
-    private Currency currency;
+    private Currency istCurrency;
 
     @ManyToOne
-    private Country country;
+    private InstitutionType istType;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getInstCode() {
@@ -215,69 +211,69 @@ public class Institution implements Serializable {
         this.insWhyInfrLabl = insWhyInfrLabl;
     }
 
-    public ContactInstitution getContact() {
-        return this.contact;
+    public ContactInstitution getIstContact() {
+        return this.istContact;
     }
 
-    public Institution contact(ContactInstitution contactInstitution) {
-        this.setContact(contactInstitution);
+    public Institution istContact(ContactInstitution contactInstitution) {
+        this.setIstContact(contactInstitution);
         return this;
     }
 
-    public void setContact(ContactInstitution contactInstitution) {
-        this.contact = contactInstitution;
+    public void setIstContact(ContactInstitution contactInstitution) {
+        this.istContact = contactInstitution;
     }
 
-    public Logo getLogo() {
-        return this.logo;
+    public Logo getIstLogo() {
+        return this.istLogo;
     }
 
-    public Institution logo(Logo logo) {
-        this.setLogo(logo);
+    public Institution istLogo(Logo logo) {
+        this.setIstLogo(logo);
         return this;
     }
 
-    public void setLogo(Logo logo) {
-        this.logo = logo;
+    public void setIstLogo(Logo logo) {
+        this.istLogo = logo;
     }
 
-    public InstitutionType getInstType() {
-        return this.instType;
+    public Country getIstCountry() {
+        return this.istCountry;
     }
 
-    public Institution instType(InstitutionType institutionType) {
-        this.setInstType(institutionType);
+    public Institution istCountry(Country country) {
+        this.setIstCountry(country);
         return this;
     }
 
-    public void setInstType(InstitutionType institutionType) {
-        this.instType = institutionType;
+    public void setIstCountry(Country country) {
+        this.istCountry = country;
     }
 
-    public Currency getCurrency() {
-        return this.currency;
+    public Currency getIstCurrency() {
+        return this.istCurrency;
     }
 
-    public Institution currency(Currency currency) {
-        this.setCurrency(currency);
+    public Institution istCurrency(Currency currency) {
+        this.setIstCurrency(currency);
         return this;
     }
 
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
+    public void setIstCurrency(Currency currency) {
+        this.istCurrency = currency;
     }
 
-    public Country getCountry() {
-        return this.country;
+    public InstitutionType getIstType() {
+        return this.istType;
     }
 
-    public Institution country(Country country) {
-        this.setCountry(country);
+    public Institution istType(InstitutionType institutionType) {
+        this.setIstType(institutionType);
         return this;
     }
 
-    public void setCountry(Country country) {
-        this.country = country;
+    public void setIstType(InstitutionType institutionType) {
+        this.istType = institutionType;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

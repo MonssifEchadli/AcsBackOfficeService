@@ -2,7 +2,7 @@
   "generator-jhipster:7.0.1": {
     "promptValues": {
       "packageName": "ma.s2m.nxp",
-      "nativeLanguage": "en"
+      "nativeLanguage": "fr"
     }
   }
 }

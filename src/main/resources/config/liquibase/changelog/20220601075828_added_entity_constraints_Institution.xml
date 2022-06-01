@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Institution.
+    -->
+    <changeSet id="20220601075828-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ist_contact_con_inst_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__ist_contact_id"
+                                 referencedColumnNames="con_inst_code"
+                                 referencedTableName="contact_institution"/>
+
+        <addForeignKeyConstraint baseColumnNames="ist_logo_log_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__ist_logo_id"
+                                 referencedColumnNames="log_code"
+                                 referencedTableName="logo"/>
+
+        <addForeignKeyConstraint baseColumnNames="ist_country_cou_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__ist_country_id"
+                                 referencedColumnNames="cou_code"
+                                 referencedTableName="country"/>
+
+        <addForeignKeyConstraint baseColumnNames="ist_currency_cur_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__ist_currency_id"
+                                 referencedColumnNames="cur_code"
+                                 referencedTableName="currency"/>
+
+        <addForeignKeyConstraint baseColumnNames="ist_type_ist_code"
+                                 baseTableName="institution"
+                                 constraintName="fk_institution__ist_type_id"
+                                 referencedColumnNames="ist_code"
+                                 referencedTableName="institution_type"/>
+    </changeSet>
+</databaseChangeLog>

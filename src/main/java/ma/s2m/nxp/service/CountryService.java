@@ -15,4 +15,5 @@ public interface CountryService {
      * @return the list of entities.
      */
     List<CountrySlimDTO> findAll();
+
 }

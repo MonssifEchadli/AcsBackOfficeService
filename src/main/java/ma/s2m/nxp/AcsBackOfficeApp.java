@@ -20,18 +20,18 @@ import tech.jhipster.config.JHipsterConstants;
 
 @SpringBootApplication
 @EnableConfigurationProperties({ LiquibaseProperties.class, ApplicationProperties.class })
-public class AcsBackOfficeApp {
+public class AcsBackofficeApp {
 
-    private static final Logger log = LoggerFactory.getLogger(AcsBackOfficeApp.class);
+    private static final Logger log = LoggerFactory.getLogger(AcsBackofficeApp.class);
 
     private final Environment env;
 
-    public AcsBackOfficeApp(Environment env) {
+    public AcsBackofficeApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes AcsBackOffice.
+     * Initializes AcsBackoffice.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -64,7 +64,7 @@ public class AcsBackOfficeApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(AcsBackOfficeApp.class);
+        SpringApplication app = new SpringApplication(AcsBackofficeApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

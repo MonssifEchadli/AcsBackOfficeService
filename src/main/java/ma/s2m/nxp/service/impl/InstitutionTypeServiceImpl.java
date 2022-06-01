@@ -27,13 +27,10 @@ public class InstitutionTypeServiceImpl implements InstitutionTypeService {
 
     private final InstitutionTypeRepository institutionTypeRepository;
 
-    private final InstitutionTypeMapper institutionTypeMapper;
-
     private final InstitutionTypeSlimMapper institutionTypeSlimMapper;
 
-    public InstitutionTypeServiceImpl(InstitutionTypeRepository institutionTypeRepository, InstitutionTypeMapper institutionTypeMapper, InstitutionTypeSlimMapper institutionTypeSlimMapper) {
+    public InstitutionTypeServiceImpl(InstitutionTypeRepository institutionTypeRepository, InstitutionTypeSlimMapper institutionTypeSlimMapper) {
         this.institutionTypeRepository = institutionTypeRepository;
-        this.institutionTypeMapper = institutionTypeMapper;
         this.institutionTypeSlimMapper = institutionTypeSlimMapper;
     }
 

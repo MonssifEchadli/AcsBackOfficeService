@@ -9,7 +9,7 @@
     <!--
         Added the entity Institution.
     -->
-    <changeSet id="20220527093953-1" author="jhipster">
+    <changeSet id="20220601075828-1" author="jhipster">
         <createTable tableName="institution">
             <column name="inst_code" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -44,19 +44,19 @@
             <column name="ins_why_infr_labl" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="contact_cont_inst_code" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_institution__contact_cont_inst_code" />
+            <column name="ist_contact_con_inst_code" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_institution__ist_contact_con_inst_code" />
             </column>
-            <column name="logo_log_code" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_institution__logo_log_code" />
+            <column name="ist_logo_log_code" type="bigint">
+                <constraints nullable="true" unique="true" uniqueConstraintName="ux_institution__ist_logo_log_code" />
             </column>
-            <column name="inst_type_ist_code" type="bigint">
+            <column name="ist_country_cou_code" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="currency_cur_code" type="bigint">
+            <column name="ist_currency_cur_code" type="bigint">
                 <constraints nullable="true" />
             </column>
-            <column name="country_cou_code" type="bigint">
+            <column name="ist_type_ist_code" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
@@ -73,7 +73,7 @@
           This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
           Spring Boot configuration key.
     -->
-    <changeSet id="20220527093953-1-data" author="jhipster" context="faker">
+    <changeSet id="20220601075828-1-data" author="jhipster" context="faker">
         <loadData
                   file="config/liquibase/fake-data/institution.csv"
                   separator=";"

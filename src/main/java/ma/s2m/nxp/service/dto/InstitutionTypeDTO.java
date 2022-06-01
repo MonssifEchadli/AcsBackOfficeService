@@ -10,7 +10,7 @@ public class InstitutionTypeDTO implements Serializable {
 
     private Long istCode;
 
-    private String istLabe;
+    private String istLabel;
 
     public Long getIstCode() {
         return istCode;
@@ -20,12 +20,12 @@ public class InstitutionTypeDTO implements Serializable {
         this.istCode = istCode;
     }
 
-    public String getIstLabe() {
-        return istLabe;
+    public String getIstLabel() {
+        return istLabel;
     }
 
-    public void setIstLabe(String istLabe) {
-        this.istLabe = istLabe;
+    public void setIstLabel(String istLabel) {
+        this.istLabel = istLabel;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class InstitutionTypeDTO implements Serializable {
     public String toString() {
         return "InstitutionTypeDTO{" +
             "istCode=" + getIstCode() +
-            ", istLabe='" + getIstLabe() + "'" +
+            ", istLabel='" + getIstLabel() + "'" +
             "}";
     }
 }

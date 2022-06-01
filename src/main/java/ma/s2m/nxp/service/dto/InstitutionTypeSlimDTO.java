@@ -7,7 +7,7 @@ public class InstitutionTypeSlimDTO implements Serializable {
 
     private Long istCode;
 
-    private String istLabe;
+    private String istLabel;
 
     public Long getIstCode() {
         return istCode;
@@ -17,12 +17,12 @@ public class InstitutionTypeSlimDTO implements Serializable {
         this.istCode = istCode;
     }
 
-    public String getIstLabe() {
-        return istLabe;
+    public String getIstLabel() {
+        return istLabel;
     }
 
-    public void setIstLabe(String istLabe) {
-        this.istLabe = istLabe;
+    public void setIstLabel(String istLabel) {
+        this.istLabel = istLabel;
     }
 
     @Override
@@ -30,19 +30,19 @@ public class InstitutionTypeSlimDTO implements Serializable {
         if (this == o) return true;
         if (!(o instanceof InstitutionTypeSlimDTO)) return false;
         InstitutionTypeSlimDTO that = (InstitutionTypeSlimDTO) o;
-        return istCode.equals(that.istCode) && istLabe.equals(that.istLabe);
+        return istCode.equals(that.istCode) && istLabel.equals(that.istLabel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(istCode, istLabe);
+        return Objects.hash(istCode, istLabel);
     }
 
     @Override
     public String toString() {
-        return "InstitutionTypeSlimGetInstitutionDTO{" +
+        return "InstitutionTypeSlimDTO{" +
             "istCode=" + istCode +
-            ", istLabe='" + istLabe + '\'' +
+            ", istLabel='" + istLabel + '\'' +
             '}';
     }
 }

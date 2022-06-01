@@ -7,6 +7,7 @@ import java.util.Objects;
 import java.util.Optional;
 import ma.s2m.nxp.repository.InstitutionRepository;
 import ma.s2m.nxp.service.InstitutionService;
+import ma.s2m.nxp.service.dto.InstitutionDTO;
 import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
 import ma.s2m.nxp.web.rest.errors.BadRequestAlertException;
 import org.slf4j.Logger;
@@ -26,7 +27,7 @@ public class InstitutionResource {
 
     private final Logger log = LoggerFactory.getLogger(InstitutionResource.class);
 
-    private static final String ENTITY_NAME = "acsBackOfficeInstitution";
+    private static final String ENTITY_NAME = "acsBackofficeInstitution";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -98,7 +99,7 @@ public class InstitutionResource {
      * {@code PATCH  /institutions/:instCode} : Partial updates given fields of an existing institution, field will ignore if it is null
      *
      * @param instCode the id of the institutionDTO to save.
-     * @param slimInstitutionDTO the institutionDTO to update.
+     * @param institutionDTO the institutionDTO to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated institutionDTO,
      * or with status {@code 400 (Bad Request)} if the institutionDTO is not valid,
      * or with status {@code 404 (Not Found)} if the institutionDTO is not found,
@@ -130,12 +131,23 @@ public class InstitutionResource {
         );
     }
 
+    /**
+     * {@code GET  /institutions} : get all the institutions.
+     *
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of institutions in body.
+     */
     @GetMapping("/institutions")
-    public List<SlimInstitutionDTO> getAllOfInstitutions(){
-           log.debug("Rest request to get all Institutions");
-           return institutionService.findAll();
+    public List<SlimInstitutionDTO> getAllInstitutions() {
+        log.debug("REST request to get all Institutions");
+        return institutionService.findAll();
     }
 
+    /**
+     * {@code GET  /institutions/:id} : get the "id" institution.
+     *
+     * @param id the id of the institutionDTO to retrieve.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the institutionDTO, or with status {@code 404 (Not Found)}.
+     */
     @GetMapping("/institutions/{id}")
     public ResponseEntity<SlimInstitutionDTO> getInstitution(@PathVariable Long id) {
         log.debug("REST request to get Institution : {}", id);

@@ -27,7 +27,7 @@ public class CountryResource {
 
     private final Logger log = LoggerFactory.getLogger(CountryResource.class);
 
-    private static final String ENTITY_NAME = "acsBackOfficeCountry";
+    private static final String ENTITY_NAME = "acsBackofficeCountry";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
@@ -41,6 +41,8 @@ public class CountryResource {
         this.countryRepository = countryRepository;
     }
 
+
+
     /**
      * {@code GET  /countries} : get all the countries.
      *
@@ -51,5 +53,4 @@ public class CountryResource {
         log.debug("REST request to get all Countries");
         return countryService.findAll();
     }
-
 }

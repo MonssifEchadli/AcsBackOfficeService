@@ -31,8 +31,8 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "AcsBackOffice",
-  "clientRootFolder": "AcsBackOffice",
+  "microserviceName": "AcsBackoffice",
+  "clientRootFolder": "AcsBackoffice",
   "databaseType": "sql",
-  "changelogDate": "20220527093958"
+  "changelogDate": "20220601075833"
 }

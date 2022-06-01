@@ -31,15 +31,15 @@ public class InstitutionDTO implements Serializable {
 
     private String insWhyInfrLabl;
 
-    private ContactInstitutionDTO contact;
+    private ContactInstitutionDTO istContact;
 
-    private LogoDTO logo;
+    private LogoDTO istLogo;
 
-    private InstitutionTypeDTO instType;
+    private CountryDTO istCountry;
 
-    private CurrencyDTO currency;
+    private CurrencyDTO istCurrency;
 
-    private CountryDTO country;
+    private InstitutionTypeDTO istType;
 
     public Long getInstCode() {
         return instCode;
@@ -129,44 +129,44 @@ public class InstitutionDTO implements Serializable {
         this.insWhyInfrLabl = insWhyInfrLabl;
     }
 
-    public ContactInstitutionDTO getContact() {
-        return contact;
+    public ContactInstitutionDTO getIstContact() {
+        return istContact;
     }
 
-    public void setContact(ContactInstitutionDTO contact) {
-        this.contact = contact;
+    public void setIstContact(ContactInstitutionDTO istContact) {
+        this.istContact = istContact;
     }
 
-    public LogoDTO getLogo() {
-        return logo;
+    public LogoDTO getIstLogo() {
+        return istLogo;
     }
 
-    public void setLogo(LogoDTO logo) {
-        this.logo = logo;
+    public void setIstLogo(LogoDTO istLogo) {
+        this.istLogo = istLogo;
     }
 
-    public InstitutionTypeDTO getInstType() {
-        return instType;
+    public CountryDTO getIstCountry() {
+        return istCountry;
     }
 
-    public void setInstType(InstitutionTypeDTO instType) {
-        this.instType = instType;
+    public void setIstCountry(CountryDTO istCountry) {
+        this.istCountry = istCountry;
     }
 
-    public CurrencyDTO getCurrency() {
-        return currency;
+    public CurrencyDTO getIstCurrency() {
+        return istCurrency;
     }
 
-    public void setCurrency(CurrencyDTO currency) {
-        this.currency = currency;
+    public void setIstCurrency(CurrencyDTO istCurrency) {
+        this.istCurrency = istCurrency;
     }
 
-    public CountryDTO getCountry() {
-        return country;
+    public InstitutionTypeDTO getIstType() {
+        return istType;
     }
 
-    public void setCountry(CountryDTO country) {
-        this.country = country;
+    public void setIstType(InstitutionTypeDTO istType) {
+        this.istType = istType;
     }
 
     @Override
@@ -205,11 +205,11 @@ public class InstitutionDTO implements Serializable {
             ", insSbmtAthnLabl='" + getInsSbmtAthnLabl() + "'" +
             ", insRsndInfrLabl='" + getInsRsndInfrLabl() + "'" +
             ", insWhyInfrLabl='" + getInsWhyInfrLabl() + "'" +
-            ", contact=" + getContact() +
-            ", logo=" + getLogo() +
-            ", instType=" + getInstType() +
-            ", currency=" + getCurrency() +
-            ", country=" + getCountry() +
+            ", istContact=" + getIstContact() +
+            ", istLogo=" + getIstLogo() +
+            ", istCountry=" + getIstCountry() +
+            ", istCurrency=" + getIstCurrency() +
+            ", istType=" + getIstType() +
             "}";
     }
 }

@@ -10,8 +10,8 @@ import org.mapstruct.Named;
 
 @Mapper(componentModel = "spring" , uses={})
 public interface ContactSlimMapper extends EntityMapper<ContactSlimDTO, ContactInstitution> {
-    @Named("contInstCode")
+    @Named("conInstCode")
     @BeanMapping(ignoreByDefault = true)
-    @Mapping(target = "contInstCode", source = "contInstCode")
+    @Mapping(target = "conInstCode", source = "conInstCode")
     ContactSlimDTO toDtoId(ContactInstitution contactInstitution);
 }

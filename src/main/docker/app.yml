@@ -13,7 +13,7 @@ services:
   acsbackoffice-mysql:
     image: mysql:8.0.23
     # volumes:
-    #   - ~/volumes/jhipster/AcsBackOffice/mysql/:/var/lib/mysql/
+    #   - ~/volumes/jhipster/AcsBackoffice/mysql/:/var/lib/mysql/
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_DATABASE=acsbackoffice

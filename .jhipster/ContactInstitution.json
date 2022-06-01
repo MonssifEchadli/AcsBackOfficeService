@@ -2,30 +2,30 @@
   "name": "ContactInstitution",
   "fields": [
     {
-      "fieldName": "contInstCode",
+      "fieldName": "conInstCode",
       "fieldType": "Long",
       "options": {
         "id": true
       }
     },
     {
-      "fieldName": "contInstFirstName",
+      "fieldName": "conInstFirstName",
       "fieldType": "String"
     },
     {
-      "fieldName": "contInstLastName",
+      "fieldName": "conInstLastName",
       "fieldType": "String"
     },
     {
-      "fieldName": "contInstPhone",
+      "fieldName": "conInstPhone",
       "fieldType": "String"
     },
     {
-      "fieldName": "contInstEmail",
+      "fieldName": "conInstEmail",
       "fieldType": "String"
     },
     {
-      "fieldName": "contInstJob",
+      "fieldName": "conInstJob",
       "fieldType": "String"
     }
   ],
@@ -39,8 +39,8 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "AcsBackOffice",
-  "clientRootFolder": "AcsBackOffice",
+  "microserviceName": "AcsBackoffice",
+  "clientRootFolder": "AcsBackoffice",
   "databaseType": "sql",
-  "changelogDate": "20220527093954"
+  "changelogDate": "20220601075829"
 }

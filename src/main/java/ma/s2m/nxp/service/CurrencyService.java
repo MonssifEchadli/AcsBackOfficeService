@@ -9,13 +9,10 @@ import ma.s2m.nxp.service.dto.CurrencySlimDTO;
  * Service Interface for managing {@link ma.s2m.nxp.domain.Currency}.
  */
 public interface CurrencyService {
-
-
     /**
      * Get all the currencies.
      *
      * @return the list of entities.
      */
     List<CurrencySlimDTO> findAll();
-
 }

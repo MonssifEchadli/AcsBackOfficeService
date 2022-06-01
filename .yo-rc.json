@@ -3,7 +3,7 @@
     "blueprints": [],
     "otherModules": [],
     "applicationType": "microservice",
-    "baseName": "AcsBackOffice",
+    "baseName": "AcsBackoffice",
     "jhipsterVersion": "7.0.1",
     "skipClient": true,
     "skipUserManagement": true,
@@ -15,7 +15,7 @@
     "dtoSuffix": "DTO",
     "testFrameworks": [],
     "pages": [],
-    "creationTimestamp": 1653644113169,
+    "creationTimestamp": 1654070174451,
     "serviceDiscoveryType": false,
     "reactive": false,
     "authenticationType": "jwt",
@@ -33,11 +33,11 @@
     "messageBroker": false,
     "enableSwaggerCodegen": false,
     "enableTranslation": true,
-    "nativeLanguage": "en",
+    "nativeLanguage": "fr",
     "packageFolder": "ma/s2m/nxp",
-    "jwtSecretKey": "YWVkNDdiMmZiMjA1NWZhZjQxMzE4ODVkZDllYzkzZmY5MGJkNDI0NDI5ZWExYmZkNTg4ODhlOTg0NGYzYmE0MWFjM2U5YzhlZGE0ODE2NGVjOTRhYzI3OGMyZjAwMjhhZjQ2NThhNzc0NzI5NDlmNGE2M2Q3MDcyNDUyM2ZlOTQ=",
-    "languages": ["en", "ar-ly", "fr"],
+    "jwtSecretKey": "NDM1Y2NiN2QzZjU5YzM4NTFkZjBkOGJiNzllNWVjYmM3YjhiYTFjZTAyMGE0YWI5OTM0MzBlYzg1MzJhNTExOWI5YmM0YTQxYjJmYzkxNDk4ZTc1NzljMTdlNmEyZWZkNzM5YTI3NmJkODYzYWIxM2JjZTZiYTIyZDFlNzk5ZmQ=",
+    "languages": ["fr", "ar-ly", "en"],
     "entities": ["Institution", "ContactInstitution", "InstitutionType", "Logo", "Currency", "Country"],
-    "lastLiquibaseTimestamp": 1653644398000
+    "lastLiquibaseTimestamp": 1654070313000
   }
 }

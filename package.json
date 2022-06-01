@@ -1,8 +1,8 @@
 {
-  "name": "acs-back-office",
+  "name": "acs-backoffice",
   "version": "0.0.0",
   "private": true,
-  "description": "Description for AcsBackOffice",
+  "description": "Description for AcsBackoffice",
   "license": "UNLICENSED",
   "scripts": {
     "prettier:check": "prettier --check \"{,src/**/}*.{md,json,yml,html,java}\"",

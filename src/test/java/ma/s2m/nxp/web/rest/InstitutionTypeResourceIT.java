@@ -31,8 +31,8 @@ import org.springframework.transaction.annotation.Transactional;
 @WithMockUser
 class InstitutionTypeResourceIT {
 
-    private static final String DEFAULT_IST_LABE = "AAAAAAAAAA";
-    private static final String UPDATED_IST_LABE = "BBBBBBBBBB";
+    private static final String DEFAULT_IST_LABEL = "AAAAAAAAAA";
+    private static final String UPDATED_IST_LABEL = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/institution-types";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{istCode}";
@@ -61,7 +61,7 @@ class InstitutionTypeResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static InstitutionType createEntity(EntityManager em) {
-        InstitutionType institutionType = new InstitutionType().istLabe(DEFAULT_IST_LABE);
+        InstitutionType institutionType = new InstitutionType().istLabel(DEFAULT_IST_LABEL);
         return institutionType;
     }
 
@@ -72,7 +72,7 @@ class InstitutionTypeResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static InstitutionType createUpdatedEntity(EntityManager em) {
-        InstitutionType institutionType = new InstitutionType().istLabe(UPDATED_IST_LABE);
+        InstitutionType institutionType = new InstitutionType().istLabel(UPDATED_IST_LABEL);
         return institutionType;
     }
 
@@ -97,7 +97,7 @@ class InstitutionTypeResourceIT {
         List<InstitutionType> institutionTypeList = institutionTypeRepository.findAll();
         assertThat(institutionTypeList).hasSize(databaseSizeBeforeCreate + 1);
         InstitutionType testInstitutionType = institutionTypeList.get(institutionTypeList.size() - 1);
-        assertThat(testInstitutionType.getIstLabe()).isEqualTo(DEFAULT_IST_LABE);
+        assertThat(testInstitutionType.getIstLabel()).isEqualTo(DEFAULT_IST_LABEL);
     }
 
     @Test
@@ -133,7 +133,7 @@ class InstitutionTypeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].istCode").value(hasItem(institutionType.getIstCode().intValue())))
-            .andExpect(jsonPath("$.[*].istLabe").value(hasItem(DEFAULT_IST_LABE)));
+            .andExpect(jsonPath("$.[*].istLabel").value(hasItem(DEFAULT_IST_LABEL)));
     }
 
     @Test
@@ -148,7 +148,7 @@ class InstitutionTypeResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.istCode").value(institutionType.getIstCode().intValue()))
-            .andExpect(jsonPath("$.istLabe").value(DEFAULT_IST_LABE));
+            .andExpect(jsonPath("$.istLabel").value(DEFAULT_IST_LABEL));
     }
 
     @Test
@@ -170,7 +170,7 @@ class InstitutionTypeResourceIT {
         InstitutionType updatedInstitutionType = institutionTypeRepository.findById(institutionType.getIstCode()).get();
         // Disconnect from session so that the updates on updatedInstitutionType are not directly saved in db
         em.detach(updatedInstitutionType);
-        updatedInstitutionType.istLabe(UPDATED_IST_LABE);
+        updatedInstitutionType.istLabel(UPDATED_IST_LABEL);
         InstitutionTypeDTO institutionTypeDTO = institutionTypeMapper.toDto(updatedInstitutionType);
 
         restInstitutionTypeMockMvc
@@ -185,7 +185,7 @@ class InstitutionTypeResourceIT {
         List<InstitutionType> institutionTypeList = institutionTypeRepository.findAll();
         assertThat(institutionTypeList).hasSize(databaseSizeBeforeUpdate);
         InstitutionType testInstitutionType = institutionTypeList.get(institutionTypeList.size() - 1);
-        assertThat(testInstitutionType.getIstLabe()).isEqualTo(UPDATED_IST_LABE);
+        assertThat(testInstitutionType.getIstLabel()).isEqualTo(UPDATED_IST_LABEL);
     }
 
     @Test
@@ -267,7 +267,7 @@ class InstitutionTypeResourceIT {
         InstitutionType partialUpdatedInstitutionType = new InstitutionType();
         partialUpdatedInstitutionType.setIstCode(institutionType.getIstCode());
 
-        partialUpdatedInstitutionType.istLabe(UPDATED_IST_LABE);
+        partialUpdatedInstitutionType.istLabel(UPDATED_IST_LABEL);
 
         restInstitutionTypeMockMvc
             .perform(
@@ -281,7 +281,7 @@ class InstitutionTypeResourceIT {
         List<InstitutionType> institutionTypeList = institutionTypeRepository.findAll();
         assertThat(institutionTypeList).hasSize(databaseSizeBeforeUpdate);
         InstitutionType testInstitutionType = institutionTypeList.get(institutionTypeList.size() - 1);
-        assertThat(testInstitutionType.getIstLabe()).isEqualTo(UPDATED_IST_LABE);
+        assertThat(testInstitutionType.getIstLabel()).isEqualTo(UPDATED_IST_LABEL);
     }
 
     @Test
@@ -296,7 +296,7 @@ class InstitutionTypeResourceIT {
         InstitutionType partialUpdatedInstitutionType = new InstitutionType();
         partialUpdatedInstitutionType.setIstCode(institutionType.getIstCode());
 
-        partialUpdatedInstitutionType.istLabe(UPDATED_IST_LABE);
+        partialUpdatedInstitutionType.istLabel(UPDATED_IST_LABEL);
 
         restInstitutionTypeMockMvc
             .perform(
@@ -310,7 +310,7 @@ class InstitutionTypeResourceIT {
         List<InstitutionType> institutionTypeList = institutionTypeRepository.findAll();
         assertThat(institutionTypeList).hasSize(databaseSizeBeforeUpdate);
         InstitutionType testInstitutionType = institutionTypeList.get(institutionTypeList.size() - 1);
-        assertThat(testInstitutionType.getIstLabe()).isEqualTo(UPDATED_IST_LABE);
+        assertThat(testInstitutionType.getIstLabel()).isEqualTo(UPDATED_IST_LABEL);
     }
 
     @Test

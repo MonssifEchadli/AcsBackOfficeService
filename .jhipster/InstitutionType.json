@@ -9,7 +9,7 @@
       }
     },
     {
-      "fieldName": "istLabe",
+      "fieldName": "istLabel",
       "fieldType": "String"
     }
   ],
@@ -23,8 +23,8 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "AcsBackOffice",
-  "clientRootFolder": "AcsBackOffice",
+  "microserviceName": "AcsBackoffice",
+  "clientRootFolder": "AcsBackoffice",
   "databaseType": "sql",
-  "changelogDate": "20220527093955"
+  "changelogDate": "20220601075830"
 }

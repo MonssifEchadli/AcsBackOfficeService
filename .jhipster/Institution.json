@@ -54,33 +54,33 @@
       "relationshipType": "one-to-one",
       "otherEntityName": "contactInstitution",
       "otherEntityRelationshipName": "institution",
-      "relationshipName": "contact",
+      "relationshipName": "istContact",
       "ownerSide": true
     },
     {
       "relationshipType": "one-to-one",
       "otherEntityName": "logo",
       "otherEntityRelationshipName": "institution",
-      "relationshipName": "logo",
+      "relationshipName": "istLogo",
       "ownerSide": true
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "institutionType",
-      "otherEntityRelationshipName": "institution",
-      "relationshipName": "instType"
-    },
-    {
-      "relationshipType": "many-to-one",
-      "otherEntityName": "currency",
-      "otherEntityRelationshipName": "institution",
-      "relationshipName": "currency"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "country",
       "otherEntityRelationshipName": "institution",
-      "relationshipName": "country"
+      "relationshipName": "istCountry"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "currency",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "istCurrency"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "institutionType",
+      "otherEntityRelationshipName": "institution",
+      "relationshipName": "istType"
     }
   ],
   "entityTableName": "institution",
@@ -92,8 +92,8 @@
   "readOnly": false,
   "embedded": false,
   "applications": "*",
-  "microserviceName": "AcsBackOffice",
-  "clientRootFolder": "AcsBackOffice",
+  "microserviceName": "AcsBackoffice",
+  "clientRootFolder": "AcsBackoffice",
   "databaseType": "sql",
-  "changelogDate": "20220527093953"
+  "changelogDate": "20220601075828"
 }

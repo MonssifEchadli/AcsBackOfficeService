@@ -18,7 +18,7 @@ spring:
     # Uncomment the following line to enable tests against production database type rather than H2, using Testcontainers
     #active: testcontainers
   application:
-    name: AcsBackOffice
+    name: AcsBackoffice
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:mem:acsbackoffice;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -57,13 +57,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: acs-back-office-task-
+      thread-name-prefix: acs-backoffice-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: acs-back-office-scheduling-
+      thread-name-prefix: acs-backoffice-scheduling-
       pool:
         size: 1
   thymeleaf:
@@ -81,7 +81,7 @@ server:
 
 jhipster:
   clientApp:
-    name: 'acsBackOfficeApp'
+    name: 'acsBackofficeApp'
   logging:
     # To test json console appender
     use-json-format: false
@@ -94,7 +94,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YWVkNDdiMmZiMjA1NWZhZjQxMzE4ODVkZDllYzkzZmY5MGJkNDI0NDI5ZWExYmZkNTg4ODhlOTg0NGYzYmE0MWFjM2U5YzhlZGE0ODE2NGVjOTRhYzI3OGMyZjAwMjhhZjQ2NThhNzc0NzI5NDlmNGE2M2Q3MDcyNDUyM2ZlOTQ=
+        base64-secret: NDM1Y2NiN2QzZjU5YzM4NTFkZjBkOGJiNzllNWVjYmM3YjhiYTFjZTAyMGE0YWI5OTM0MzBlYzg1MzJhNTExOWI5YmM0YTQxYjJmYzkxNDk4ZTc1NzljMTdlNmEyZWZkNzM5YTI3NmJkODYzYWIxM2JjZTZiYTIyZDFlNzk5ZmQ=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
 # ===================================================================

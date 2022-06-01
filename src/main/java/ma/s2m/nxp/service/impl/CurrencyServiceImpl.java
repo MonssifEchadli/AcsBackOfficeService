@@ -27,13 +27,10 @@ public class CurrencyServiceImpl implements CurrencyService {
 
     private final CurrencyRepository currencyRepository;
 
-    private final CurrencyMapper currencyMapper;
-
     private final CurrencySlimMapper currencySlimMapper;
 
-    public CurrencyServiceImpl(CurrencyRepository currencyRepository, CurrencyMapper currencyMapper, CurrencySlimMapper currencySlimMapper) {
+    public CurrencyServiceImpl(CurrencyRepository currencyRepository, CurrencySlimMapper currencySlimMapper) {
         this.currencyRepository = currencyRepository;
-        this.currencyMapper = currencyMapper;
         this.currencySlimMapper = currencySlimMapper;
     }
 

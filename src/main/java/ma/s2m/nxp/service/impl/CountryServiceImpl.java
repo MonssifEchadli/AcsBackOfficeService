@@ -27,9 +27,10 @@ public class CountryServiceImpl implements CountryService {
 
     private final CountryRepository countryRepository;
 
+
     private final CountrySlimMapper countrySlimMapper;
 
-    public CountryServiceImpl(CountryRepository countryRepository, CountrySlimMapper countrySlimMapper) {
+    public CountryServiceImpl(CountryRepository countryRepository, CountryMapper countryMapper, CountrySlimMapper countrySlimMapper) {
         this.countryRepository = countryRepository;
         this.countrySlimMapper = countrySlimMapper;
     }

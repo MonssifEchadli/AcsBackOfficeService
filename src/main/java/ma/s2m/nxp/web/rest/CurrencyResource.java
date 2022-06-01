@@ -27,7 +27,7 @@ public class CurrencyResource {
 
     private final Logger log = LoggerFactory.getLogger(CurrencyResource.class);
 
-    private static final String ENTITY_NAME = "acsBackOfficeCurrency";
+    private static final String ENTITY_NAME = "acsBackofficeCurrency";
 
     @Value("${jhipster.clientApp.name}")
     private String applicationName;
