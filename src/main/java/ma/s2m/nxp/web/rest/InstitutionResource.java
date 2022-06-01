@@ -48,6 +48,7 @@ public class InstitutionResource {
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new institutionDTO, or with status {@code 400 (Bad Request)} if the institution has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PostMapping("/institutions")
     public ResponseEntity<SlimInstitutionDTO> createInstitution(@RequestBody SlimInstitutionDTO slimInstitutionDTO) throws URISyntaxException {
         log.debug("REST request to save Institution : {}", slimInstitutionDTO);
@@ -71,6 +72,7 @@ public class InstitutionResource {
      * or with status {@code 500 (Internal Server Error)} if the institutionDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PutMapping("/institutions/{instCode}")
     public ResponseEntity<SlimInstitutionDTO> updateInstitution(
         @PathVariable(value = "instCode", required = false) final Long instCode,
@@ -99,13 +101,14 @@ public class InstitutionResource {
      * {@code PATCH  /institutions/:instCode} : Partial updates given fields of an existing institution, field will ignore if it is null
      *
      * @param instCode the id of the institutionDTO to save.
-     * @param institutionDTO the institutionDTO to update.
+     * @param slimInstitutionDTO the institutionDTO to update.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated institutionDTO,
      * or with status {@code 400 (Bad Request)} if the institutionDTO is not valid,
      * or with status {@code 404 (Not Found)} if the institutionDTO is not found,
      * or with status {@code 500 (Internal Server Error)} if the institutionDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PatchMapping(value = "/institutions/{instCode}", consumes = "application/merge-patch+json")
     public ResponseEntity<SlimInstitutionDTO> partialUpdateInstitution(
         @PathVariable(value = "instCode", required = false) final Long instCode,
@@ -136,6 +139,7 @@ public class InstitutionResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of institutions in body.
      */
+    @CrossOrigin("*")
     @GetMapping("/institutions")
     public List<SlimInstitutionDTO> getAllInstitutions() {
         log.debug("REST request to get all Institutions");
@@ -148,6 +152,7 @@ public class InstitutionResource {
      * @param id the id of the institutionDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the institutionDTO, or with status {@code 404 (Not Found)}.
      */
+    @CrossOrigin("*")
     @GetMapping("/institutions/{id}")
     public ResponseEntity<SlimInstitutionDTO> getInstitution(@PathVariable Long id) {
         log.debug("REST request to get Institution : {}", id);
@@ -161,6 +166,7 @@ public class InstitutionResource {
      * @param id the id of the institutionDTO to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
+    @CrossOrigin("*")
     @DeleteMapping("/institutions/{id}")
     public ResponseEntity<Void> deleteInstitution(@PathVariable Long id) {
         log.debug("REST request to delete Institution : {}", id);

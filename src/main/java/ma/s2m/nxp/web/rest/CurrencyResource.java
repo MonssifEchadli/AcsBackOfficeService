@@ -46,6 +46,7 @@ public class CurrencyResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of currencies in body.
      */
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/currencies")
     public List<CurrencySlimDTO> getAllCurrencies() {
         log.debug("REST request to get all Currencies");

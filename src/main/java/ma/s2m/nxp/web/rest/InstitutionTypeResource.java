@@ -46,6 +46,7 @@ public class InstitutionTypeResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of institutionTypes in body.
      */
+    @CrossOrigin("*")
     @GetMapping("/institution-types")
     public List<InstitutionTypeSlimDTO> getAllInstitutionTypes() {
         log.debug("REST request to get all InstitutionTypes");

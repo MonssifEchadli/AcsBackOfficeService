@@ -50,6 +50,7 @@ public class ContactInstitutionResource {
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new contactInstitutionDTO, or with status {@code 400 (Bad Request)} if the contactInstitution has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PostMapping("/contact-institutions")
     public ResponseEntity<ContactInstitutionDTO> createContactInstitution(@RequestBody ContactInstitutionDTO contactInstitutionDTO)
         throws URISyntaxException {
@@ -74,6 +75,7 @@ public class ContactInstitutionResource {
      * or with status {@code 500 (Internal Server Error)} if the contactInstitutionDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PutMapping("/contact-institutions/{conInstCode}")
     public ResponseEntity<ContactInstitutionDTO> updateContactInstitution(
         @PathVariable(value = "conInstCode", required = false) final Long conInstCode,
@@ -111,6 +113,7 @@ public class ContactInstitutionResource {
      * or with status {@code 500 (Internal Server Error)} if the contactInstitutionDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
+    @CrossOrigin("*")
     @PatchMapping(value = "/contact-institutions/{conInstCode}", consumes = "application/merge-patch+json")
     public ResponseEntity<ContactInstitutionDTO> partialUpdateContactInstitution(
         @PathVariable(value = "conInstCode", required = false) final Long conInstCode,
@@ -141,6 +144,7 @@ public class ContactInstitutionResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of contactInstitutions in body.
      */
+    @CrossOrigin("*")
     @GetMapping("/contact-institutions")
     public List<ContactInstitutionDTO> getAllContactInstitutions() {
         log.debug("REST request to get all ContactInstitutions");
@@ -153,6 +157,7 @@ public class ContactInstitutionResource {
      * @param id the id of the contactInstitutionDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the contactInstitutionDTO, or with status {@code 404 (Not Found)}.
      */
+    @CrossOrigin("*")
     @GetMapping("/contact-institutions/{id}")
     public ResponseEntity<ContactInstitutionDTO> getContactInstitution(@PathVariable Long id) {
         log.debug("REST request to get ContactInstitution : {}", id);
@@ -166,6 +171,7 @@ public class ContactInstitutionResource {
      * @param id the id of the contactInstitutionDTO to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
+    @CrossOrigin("*")
     @DeleteMapping("/contact-institutions/{id}")
     public ResponseEntity<Void> deleteContactInstitution(@PathVariable Long id) {
         log.debug("REST request to delete ContactInstitution : {}", id);
