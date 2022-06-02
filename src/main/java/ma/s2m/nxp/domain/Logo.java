@@ -29,11 +29,8 @@ public class Logo implements Serializable {
     private Long length;
 
     @Lob
-    @Column(name = "data")
-    private byte[] data;
-
-    @Column(name = "data_content_type")
-    private String dataContentType;
+    @Column(name = "data", length = 65555)
+    private String data;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getLogCode() {
@@ -88,30 +85,17 @@ public class Logo implements Serializable {
         this.length = length;
     }
 
-    public byte[] getData() {
+    public String getData() {
         return this.data;
     }
 
-    public Logo data(byte[] data) {
+    public Logo data(String data) {
         this.data = data;
         return this;
     }
 
-    public void setData(byte[] data) {
+    public void setData(String data) {
         this.data = data;
-    }
-
-    public String getDataContentType() {
-        return this.dataContentType;
-    }
-
-    public Logo dataContentType(String dataContentType) {
-        this.dataContentType = dataContentType;
-        return this;
-    }
-
-    public void setDataContentType(String dataContentType) {
-        this.dataContentType = dataContentType;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -142,7 +126,6 @@ public class Logo implements Serializable {
             ", mime='" + getMime() + "'" +
             ", length=" + getLength() +
             ", data='" + getData() + "'" +
-            ", dataContentType='" + getDataContentType() + "'" +
             "}";
     }
 }

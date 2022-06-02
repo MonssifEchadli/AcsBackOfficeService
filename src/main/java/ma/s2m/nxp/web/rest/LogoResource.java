@@ -47,7 +47,6 @@ public class LogoResource {
      * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new logoDTO, or with status {@code 400 (Bad Request)} if the logo has already an ID.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @CrossOrigin("*")
     @PostMapping("/logos")
     public ResponseEntity<LogoDTO> createLogo(@RequestBody LogoDTO logoDTO) throws URISyntaxException {
         log.debug("REST request to save Logo : {}", logoDTO);
@@ -71,7 +70,6 @@ public class LogoResource {
      * or with status {@code 500 (Internal Server Error)} if the logoDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @CrossOrigin("*")
     @PutMapping("/logos/{logCode}")
     public ResponseEntity<LogoDTO> updateLogo(
         @PathVariable(value = "logCode", required = false) final Long logCode,
@@ -107,7 +105,6 @@ public class LogoResource {
      * or with status {@code 500 (Internal Server Error)} if the logoDTO couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @CrossOrigin("*")
     @PatchMapping(value = "/logos/{logCode}", consumes = "application/merge-patch+json")
     public ResponseEntity<LogoDTO> partialUpdateLogo(
         @PathVariable(value = "logCode", required = false) final Long logCode,
@@ -138,7 +135,6 @@ public class LogoResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of logos in body.
      */
-    @CrossOrigin("*")
     @GetMapping("/logos")
     public List<LogoDTO> getAllLogos() {
         log.debug("REST request to get all Logos");
@@ -151,7 +147,6 @@ public class LogoResource {
      * @param id the id of the logoDTO to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the logoDTO, or with status {@code 404 (Not Found)}.
      */
-    @CrossOrigin("*")
     @GetMapping("/logos/{id}")
     public ResponseEntity<LogoDTO> getLogo(@PathVariable Long id) {
         log.debug("REST request to get Logo : {}", id);
@@ -165,7 +160,6 @@ public class LogoResource {
      * @param id the id of the logoDTO to delete.
      * @return the {@link ResponseEntity} with status {@code 204 (NO_CONTENT)}.
      */
-    @CrossOrigin("*")
     @DeleteMapping("/logos/{id}")
     public ResponseEntity<Void> deleteLogo(@PathVariable Long id) {
         log.debug("REST request to delete Logo : {}", id);

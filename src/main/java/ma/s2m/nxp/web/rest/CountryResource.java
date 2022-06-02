@@ -48,7 +48,7 @@ public class CountryResource {
      *
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of countries in body.
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("*")
     @GetMapping("/countries")
     public List<CountrySlimDTO> getAllCountries() {
         log.debug("REST request to get all Countries");

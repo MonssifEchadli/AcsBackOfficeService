@@ -1,0 +1,13 @@
+entity Logo (LOGO) {
+	@id logCode Long
+	name String
+    mime String
+	length Long
+	data String
+}
+
+
+
+dto all with mapstruct
+
+service all with serviceImpl

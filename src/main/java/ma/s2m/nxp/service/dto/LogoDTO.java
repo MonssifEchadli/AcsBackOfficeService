@@ -2,7 +2,6 @@ package ma.s2m.nxp.service.dto;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Lob;
 
 /**
  * A DTO for the {@link ma.s2m.nxp.domain.Logo} entity.
@@ -13,14 +12,7 @@ public class LogoDTO implements Serializable {
 
     private String name;
 
-    private String mime;
-
-    private Long length;
-
-    @Lob
-    private byte[] data;
-
-    private String dataContentType;
+    private String data;
 
     public Long getLogCode() {
         return logCode;
@@ -38,36 +30,13 @@ public class LogoDTO implements Serializable {
         this.name = name;
     }
 
-    public String getMime() {
-        return mime;
-    }
 
-    public void setMime(String mime) {
-        this.mime = mime;
-    }
-
-    public Long getLength() {
-        return length;
-    }
-
-    public void setLength(Long length) {
-        this.length = length;
-    }
-
-    public byte[] getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(byte[] data) {
+    public void setData(String data) {
         this.data = data;
-    }
-
-    public String getDataContentType() {
-        return dataContentType;
-    }
-
-    public void setDataContentType(String dataContentType) {
-        this.dataContentType = dataContentType;
     }
 
     @Override
@@ -97,8 +66,6 @@ public class LogoDTO implements Serializable {
         return "LogoDTO{" +
             "logCode=" + getLogCode() +
             ", name='" + getName() + "'" +
-            ", mime='" + getMime() + "'" +
-            ", length=" + getLength() +
             ", data='" + getData() + "'" +
             "}";
     }

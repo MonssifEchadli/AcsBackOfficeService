@@ -22,7 +22,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.Base64Utils;
 
 /**
  * Integration tests for the {@link LogoResource} REST controller.
@@ -41,10 +40,8 @@ class LogoResourceIT {
     private static final Long DEFAULT_LENGTH = 1L;
     private static final Long UPDATED_LENGTH = 2L;
 
-    private static final byte[] DEFAULT_DATA = TestUtil.createByteArray(1, "0");
-    private static final byte[] UPDATED_DATA = TestUtil.createByteArray(1, "1");
-    private static final String DEFAULT_DATA_CONTENT_TYPE = "image/jpg";
-    private static final String UPDATED_DATA_CONTENT_TYPE = "image/png";
+    private static final String DEFAULT_DATA = "AAAAAAAAAA";
+    private static final String UPDATED_DATA = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/logos";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{logCode}";
@@ -73,12 +70,7 @@ class LogoResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Logo createEntity(EntityManager em) {
-        Logo logo = new Logo()
-            .name(DEFAULT_NAME)
-            .mime(DEFAULT_MIME)
-            .length(DEFAULT_LENGTH)
-            .data(DEFAULT_DATA)
-            .dataContentType(DEFAULT_DATA_CONTENT_TYPE);
+        Logo logo = new Logo().name(DEFAULT_NAME).mime(DEFAULT_MIME).length(DEFAULT_LENGTH).data(DEFAULT_DATA);
         return logo;
     }
 
@@ -89,12 +81,7 @@ class LogoResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Logo createUpdatedEntity(EntityManager em) {
-        Logo logo = new Logo()
-            .name(UPDATED_NAME)
-            .mime(UPDATED_MIME)
-            .length(UPDATED_LENGTH)
-            .data(UPDATED_DATA)
-            .dataContentType(UPDATED_DATA_CONTENT_TYPE);
+        Logo logo = new Logo().name(UPDATED_NAME).mime(UPDATED_MIME).length(UPDATED_LENGTH).data(UPDATED_DATA);
         return logo;
     }
 
@@ -121,7 +108,6 @@ class LogoResourceIT {
         assertThat(testLogo.getMime()).isEqualTo(DEFAULT_MIME);
         assertThat(testLogo.getLength()).isEqualTo(DEFAULT_LENGTH);
         assertThat(testLogo.getData()).isEqualTo(DEFAULT_DATA);
-        assertThat(testLogo.getDataContentType()).isEqualTo(DEFAULT_DATA_CONTENT_TYPE);
     }
 
     @Test
@@ -158,8 +144,7 @@ class LogoResourceIT {
             .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME)))
             .andExpect(jsonPath("$.[*].mime").value(hasItem(DEFAULT_MIME)))
             .andExpect(jsonPath("$.[*].length").value(hasItem(DEFAULT_LENGTH.intValue())))
-            .andExpect(jsonPath("$.[*].dataContentType").value(hasItem(DEFAULT_DATA_CONTENT_TYPE)))
-            .andExpect(jsonPath("$.[*].data").value(hasItem(Base64Utils.encodeToString(DEFAULT_DATA))));
+            .andExpect(jsonPath("$.[*].data").value(hasItem(DEFAULT_DATA)));
     }
 
     @Test
@@ -177,8 +162,7 @@ class LogoResourceIT {
             .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
             .andExpect(jsonPath("$.mime").value(DEFAULT_MIME))
             .andExpect(jsonPath("$.length").value(DEFAULT_LENGTH.intValue()))
-            .andExpect(jsonPath("$.dataContentType").value(DEFAULT_DATA_CONTENT_TYPE))
-            .andExpect(jsonPath("$.data").value(Base64Utils.encodeToString(DEFAULT_DATA)));
+            .andExpect(jsonPath("$.data").value(DEFAULT_DATA));
     }
 
     @Test
@@ -200,12 +184,7 @@ class LogoResourceIT {
         Logo updatedLogo = logoRepository.findById(logo.getLogCode()).get();
         // Disconnect from session so that the updates on updatedLogo are not directly saved in db
         em.detach(updatedLogo);
-        updatedLogo
-            .name(UPDATED_NAME)
-            .mime(UPDATED_MIME)
-            .length(UPDATED_LENGTH)
-            .data(UPDATED_DATA)
-            .dataContentType(UPDATED_DATA_CONTENT_TYPE);
+        updatedLogo.name(UPDATED_NAME).mime(UPDATED_MIME).length(UPDATED_LENGTH).data(UPDATED_DATA);
         LogoDTO logoDTO = logoMapper.toDto(updatedLogo);
 
         restLogoMockMvc
@@ -224,7 +203,6 @@ class LogoResourceIT {
         assertThat(testLogo.getMime()).isEqualTo(UPDATED_MIME);
         assertThat(testLogo.getLength()).isEqualTo(UPDATED_LENGTH);
         assertThat(testLogo.getData()).isEqualTo(UPDATED_DATA);
-        assertThat(testLogo.getDataContentType()).isEqualTo(UPDATED_DATA_CONTENT_TYPE);
     }
 
     @Test
@@ -322,7 +300,6 @@ class LogoResourceIT {
         assertThat(testLogo.getMime()).isEqualTo(UPDATED_MIME);
         assertThat(testLogo.getLength()).isEqualTo(UPDATED_LENGTH);
         assertThat(testLogo.getData()).isEqualTo(DEFAULT_DATA);
-        assertThat(testLogo.getDataContentType()).isEqualTo(DEFAULT_DATA_CONTENT_TYPE);
     }
 
     @Test
@@ -337,12 +314,7 @@ class LogoResourceIT {
         Logo partialUpdatedLogo = new Logo();
         partialUpdatedLogo.setLogCode(logo.getLogCode());
 
-        partialUpdatedLogo
-            .name(UPDATED_NAME)
-            .mime(UPDATED_MIME)
-            .length(UPDATED_LENGTH)
-            .data(UPDATED_DATA)
-            .dataContentType(UPDATED_DATA_CONTENT_TYPE);
+        partialUpdatedLogo.name(UPDATED_NAME).mime(UPDATED_MIME).length(UPDATED_LENGTH).data(UPDATED_DATA);
 
         restLogoMockMvc
             .perform(
@@ -360,7 +332,6 @@ class LogoResourceIT {
         assertThat(testLogo.getMime()).isEqualTo(UPDATED_MIME);
         assertThat(testLogo.getLength()).isEqualTo(UPDATED_LENGTH);
         assertThat(testLogo.getData()).isEqualTo(UPDATED_DATA);
-        assertThat(testLogo.getDataContentType()).isEqualTo(UPDATED_DATA_CONTENT_TYPE);
     }
 
     @Test

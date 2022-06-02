@@ -12,7 +12,7 @@ public interface InstitutionService {
     /**
      * Save a institution.
      *
-     * @param slimInstitutionDTO the entity to save.
+     * @param institutionDTO the entity to save.
      * @return the persisted entity.
      */
     SlimInstitutionDTO save(SlimInstitutionDTO slimInstitutionDTO);
@@ -20,7 +20,7 @@ public interface InstitutionService {
     /**
      * Partially updates a institution.
      *
-     * @param slimInstitutionDTO the entity to update partially.
+     * @param institutionDTO the entity to update partially.
      * @return the persisted entity.
      */
     Optional<SlimInstitutionDTO> partialUpdate(SlimInstitutionDTO slimInstitutionDTO);
