@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import ma.s2m.nxp.service.dto.InstitutionDTO;
 import ma.s2m.nxp.service.dto.SlimInstitutionDTO;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 /**
  * Service Interface for managing {@link ma.s2m.nxp.domain.Institution}.
@@ -20,7 +22,7 @@ public interface InstitutionService {
     /**
      * Partially updates a institution.
      *
-     * @param institutionDTO the entity to update partially.
+     * @param slimInstitutionDTO the entity to update partially.
      * @return the persisted entity.
      */
     Optional<SlimInstitutionDTO> partialUpdate(SlimInstitutionDTO slimInstitutionDTO);
@@ -30,7 +32,7 @@ public interface InstitutionService {
      *
      * @return the list of entities.
      */
-    List<SlimInstitutionDTO> findAll();
+    Page<SlimInstitutionDTO> findAll(Pageable pageable);
 
     /**
      * Get the "id" institution.

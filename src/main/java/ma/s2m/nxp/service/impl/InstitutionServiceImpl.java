@@ -13,6 +13,9 @@ import ma.s2m.nxp.service.mapper.InstitutionMapper;
 import ma.s2m.nxp.service.mapper.SlimInstitutionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -60,9 +63,9 @@ public class InstitutionServiceImpl implements InstitutionService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<SlimInstitutionDTO> findAll() {
+    public Page<SlimInstitutionDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Institutions");
-        return institutionRepository.findAll().stream().map(slimInstitutionMapper::toDto).collect(Collectors.toCollection(LinkedList::new));
+        return institutionRepository.findAll(pageable).map(slimInstitutionMapper::toDto);
     }
 
     @Override
